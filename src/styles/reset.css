@@ -9,7 +9,8 @@
 }
 
 html,
-body {
+body,
+main {
   block-size: 100%;
 }
 

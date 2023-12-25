@@ -1,9 +1,22 @@
 :root {
-  --bg-color: hsl(0, 0%, 5%);
-  --text-color: hsl(0, 0%, 100%);
+  --max-inline-size: 192rem;
+  --padding-inline: clamp(2rem, 1.4rem + 1.875vw, 5rem);
+}
+
+.light {
+  --bg-color: hsl(0, 0%, 94%);
+  --text-color: hsl(180, 8%, 7%);
+}
+
+.dark {
+  --bg-color: hsl(180, 8%, 7%);
+  --text-color: hsl(0, 0%, 94%);
 }
 
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-size: 2rem;
+  max-inline-size: var(--max-inline-size);
+  margin-inline: auto;
 }

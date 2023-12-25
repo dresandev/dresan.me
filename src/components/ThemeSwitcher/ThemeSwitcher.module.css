@@ -1,0 +1,87 @@
+.themeToggle {
+  --ease-3: cubic-bezier(0.25, 0, 0.3, 1);
+  --ease-out-5: cubic-bezier(0, 0, 0, 1);
+  --ease-elastic-3: cubic-bezier(0.5, 1.25, 0.75, 1.25);
+  --ease-elastic-4: cubic-bezier(0.5, 1.5, 0.75, 1.25);
+  --size: 2.6rem;
+  inline-size: var(--size);
+  block-size: var(--size);
+  padding: 0;
+  background: none;
+  border: none;
+  outline-offset: var(--outline-offset);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sunAndMoon {
+  --size: 100%;
+  inline-size: var(--size);
+  block-size: var(--size);
+  stroke-linecap: round;
+}
+
+.sunAndMoon :is(.moon, .sun, .sunBeams) {
+  transform-origin: center center;
+}
+
+.sunAndMoon > .sunBeams {
+  stroke: currentColor;
+  stroke-width: 0.2rem;
+}
+
+.sunAndMoon.darkMode > .sun {
+  transform: scale(1.75);
+}
+
+.sunAndMoon.darkMode > .sunBeams {
+  opacity: 0;
+}
+
+.sunAndMoon.darkMode > .moon > circle {
+  transform: translateX(-0.7rem);
+}
+
+@supports (cx: 1) {
+  .sunAndMoon.darkMode > .moon > circle {
+    transform: translateX(0);
+    cx: 17;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sunAndMoon > .sun {
+    transition: transform 500ms var(--ease-elastic-3);
+  }
+
+  .sunAndMoon > .sunBeams {
+    transition: transform 500ms var(--ease-elastic-4),
+      opacity 500ms var(--ease-3);
+  }
+
+  .sunAndMoon > .moon > circle {
+    transition: transform 250ms var(--ease-out-5);
+  }
+
+  @supports (cx: 1) {
+    .sunAndMoon > .moon > circle {
+      transition: cx 250ms var(--ease-out-5);
+    }
+  }
+
+  .sunAndMoon.darkMode > .sun {
+    transform: scale(1.75);
+    transition-timing-function: var(--ease-3);
+    transition-duration: 250ms;
+  }
+
+  .sunAndMoon.darkMode > .sunBeams {
+    transform: rotateZ(-25deg);
+    transition-duration: 150ms;
+  }
+
+  .sunAndMoon.darkMode > .moon circle {
+    transition-delay: 250ms;
+    transition-duration: 500ms;
+  }
+}

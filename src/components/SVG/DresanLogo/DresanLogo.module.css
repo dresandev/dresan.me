@@ -1,0 +1,9 @@
+@media screen and (max-width: 1024px) {
+  .logo {
+    inline-size: 3.5rem;
+  }
+
+  .letters {
+    display: none;
+  }
+}

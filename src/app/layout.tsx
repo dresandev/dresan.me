@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import { clsx } from 'clsx'
+import { ThemeProvider } from '~/providers/ThemeProvider'
+import { Header } from '~/components/Header'
 import '~/styles/globals.css'
 import '~/styles/reset.css'
 
@@ -48,11 +49,18 @@ export default function RootLayout({
   children,
 }: RootLayoutProps) {
   return (
-    <html lang='es'>
+    <html lang='es' suppressHydrationWarning>
       <body className={moriFont.className}>
-        <main>
-          {children}
-        </main>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+        >
+          <Header />
+          <main>
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   )
