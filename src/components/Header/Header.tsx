@@ -1,12 +1,11 @@
 import Link from 'next/link'
 import { DresanLogo } from '~/components/SVG/DresanLogo'
-import { ThemeSwitcher } from '~/components/ThemeSwitcher'
 import styles from './Header.module.css'
 
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <Link href='/'>
+      <Link className={styles.homeLink} href='/'>
         <DresanLogo />
       </Link>
 
@@ -35,7 +34,12 @@ export const Header = () => {
         </ul>
       </nav>
 
-      <ThemeSwitcher />
+      <a
+        className={styles.contactBtn}
+        href='mailto:javiandres.016@gmail.com'
+      >
+        ¿Algo en mente?
+      </a>
     </header>
   )
 }

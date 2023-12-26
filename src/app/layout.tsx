@@ -1,6 +1,6 @@
+import clsx from 'clsx'
 import type { Metadata } from 'next'
-import localFont from 'next/font/local'
-import { ThemeProvider } from '~/providers/ThemeProvider'
+import { Bebas_Neue, Montserrat } from 'next/font/google'
 import { Header } from '~/components/Header'
 import '~/styles/globals.css'
 import '~/styles/reset.css'
@@ -25,20 +25,17 @@ export const metadata: Metadata = {
   ],
 }
 
-const moriFont = localFont({
+const bebasNeue = Bebas_Neue({
+  variable: '--bebas-neue-font',
+  weight: '400',
+  subsets: ['latin'],
   display: 'swap',
-  src: [
-    {
-      path: '../assets/fonts/Mori/PPMori-Regular.otf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../assets/fonts/Mori/PPMori-SemiBold.otf',
-      weight: '600',
-      style: 'normal',
-    },
-  ],
+})
+
+const montserrat = Montserrat({
+  weight: ['400', '500'],
+  subsets: ['latin'],
+  display: 'swap',
 })
 
 interface RootLayoutProps {
@@ -50,17 +47,14 @@ export default function RootLayout({
 }: RootLayoutProps) {
   return (
     <html lang='es' suppressHydrationWarning>
-      <body className={moriFont.className}>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-        >
-          <Header />
-          <main>
-            {children}
-          </main>
-        </ThemeProvider>
+      <body className={clsx(
+        bebasNeue.variable,
+        montserrat.className,
+      )}>
+        <Header />
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   )

@@ -1,15 +1,26 @@
+import { Marquee } from '~/components/Marquee'
+import { ProjectCard } from '~/components/ProjectCard'
 import styles from './page.module.css'
 
 export default function Home() {
   return (
-    <section className={styles.hero}>
-      <div className={styles.titleWrapper}>
+    <>
+      <section className={styles.hero}>
         <h1 className={styles.title}>
-          Frontend{'\n'}
-          Developer
+          <div className={styles.titleName}>
+            Javier Andres
+          </div>
+          Front-end Developer
         </h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tenetur sed tempora alias ab libero, nobis saepe accusamus quasi voluptates aliquid incidunt amet quae ipsa eum repellat laborum eaque architecto?</p>
-      </div>
-    </section>
+      </section>
+
+      <section>
+        <Marquee text='Proyectos' />
+
+        <div>
+          <ProjectCard />
+        </div>
+      </section>
+    </>
   )
 }

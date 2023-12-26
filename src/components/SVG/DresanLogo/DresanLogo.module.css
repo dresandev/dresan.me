@@ -1,6 +1,17 @@
+.logo path {
+  fill: currentColor;
+  stroke: transparent;
+  transition: fill 300ms ease, stroke 300ms ease;
+}
+
+.logo:hover path {
+  fill: transparent;
+  stroke: currentColor;
+}
+
 @media screen and (max-width: 1024px) {
   .logo {
-    inline-size: 3.5rem;
+    inline-size: 3.455rem;
   }
 
   .letters {

@@ -1,0 +1,31 @@
+.marquee {
+  font-family: var(--bebas-neue-font);
+  border-block: 0.1rem solid var(--border-color);
+  overflow-x: hidden;
+}
+
+.marqueeTrack {
+  --gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  inline-size: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+.text {
+  font-size: 6.5rem;
+  line-height: normal;
+}
+
+.text:nth-child(4n - 3),
+.text:nth-child(4n - 2) {
+  color: transparent;
+  -webkit-text-stroke: 0.1rem var(--text-color);
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-50% - var(--gap) / 2));
+  }
+}

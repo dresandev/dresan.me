@@ -1,0 +1,66 @@
+.card {
+  position: relative;
+  max-inline-size: 80rem;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.wrapperLink {
+  position: absolute;
+  inset: 0;
+  font-size: 0;
+  background-color: transparent;
+  transition: background-color 300ms ease-in-out;
+}
+
+.image{
+  block-size: auto;
+  inline-size: 100%;
+}
+
+.tags {
+  position: absolute;
+  display: flex;
+  column-gap: 1.6rem;
+  padding: 1.4rem;
+  transition: transform 300ms ease-in-out;
+}
+
+.tagPill {
+  padding: 1rem 2.1rem;
+  border: 0.1rem solid currentColor;
+  border-radius: 3rem;
+  font-size: 1.6rem;
+  line-height: normal;
+  backdrop-filter: blur(2rem);
+}
+
+.title {
+  position: absolute;
+  inset-block-end: 0;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: normal;
+  padding: 1.4rem;
+  transition: transform 300ms ease-in-out;
+}
+
+@media (hover: hover) {
+  .tags {
+    transform: translateY(-100%);
+    will-change: contents;
+  }
+
+  .title {
+    transform: translateY(100%);
+  }
+
+  .card:hover .tags,
+  .card:hover .title {
+    transform: translateY(0);
+  }
+
+  .card:hover .wrapperLink {
+    background-color: hsl(0 0% 0% / 0.55);
+  }
+}

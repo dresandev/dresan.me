@@ -1,22 +1,39 @@
 :root {
+  --bg-color: hsl(0, 0%, 6%);
+  --text-color: hsl(0, 0%, 100%);
+  --primary-color: hsl(54, 83%, 53%);
+  --secondary-color: hsl(13, 100%, 50%);
+  --border-color: hsl(0, 0%, 14%);
+
   --max-inline-size: 192rem;
   --padding-inline: clamp(2rem, 1.4rem + 1.875vw, 5rem);
+  --header-block-size: 7.5rem;
 }
 
-.light {
-  --bg-color: hsl(0, 0%, 94%);
-  --text-color: hsl(180, 8%, 7%);
-}
-
-.dark {
-  --bg-color: hsl(180, 8%, 7%);
-  --text-color: hsl(0, 0%, 94%);
+::selection {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-size: 2rem;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: var(--header-block-size) 1fr;
   max-inline-size: var(--max-inline-size);
   margin-inline: auto;
+  font-size: 1.8rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+main {
+  grid-row: 2 / 3;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--bebas-neue-font);
+  font-weight: 400;
 }
