@@ -16,10 +16,18 @@ export default function Home() {
 
       <section>
         <Marquee text='Proyectos' />
-
-        <div>
-          <ProjectCard />
+        <div className={styles.projectsContainer}>
+          <ProjectCard className={styles.projectCard} />
+          <ProjectCard className={styles.projectCard} />
         </div>
+      </section>
+
+      <section>
+        <Marquee text='Sobre mí' />
+      </section>
+
+      <section>
+        <Marquee text='Contacto' />
       </section>
     </>
   )

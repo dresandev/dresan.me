@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   block-size: 100%;
+  padding-block-start: var(--header-block-size);
 }
 
 .title {
@@ -14,4 +15,17 @@
 .titleName {
   color: transparent;
   -webkit-text-stroke: 0.1rem var(--text-color);
+}
+
+.projectsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  padding-block: 25rem;
+  padding-inline: var(--padding-inline);
+}
+
+.projectCard {
+  flex: 1 1 60rem;
 }

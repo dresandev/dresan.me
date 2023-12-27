@@ -16,18 +16,11 @@
 }
 
 body {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: var(--header-block-size) 1fr;
   max-inline-size: var(--max-inline-size);
   margin-inline: auto;
   font-size: 1.8rem;
   background-color: var(--bg-color);
   color: var(--text-color);
-}
-
-main {
-  grid-row: 2 / 3;
 }
 
 h1,

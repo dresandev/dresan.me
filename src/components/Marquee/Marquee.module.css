@@ -18,6 +18,12 @@
   line-height: normal;
 }
 
+.text:nth-child(odd) {
+  flex-basis: 23rem;
+  flex-shrink: 0;
+  text-align: center;
+}
+
 .text:nth-child(4n - 3),
 .text:nth-child(4n - 2) {
   color: transparent;

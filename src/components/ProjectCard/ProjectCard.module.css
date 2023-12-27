@@ -1,8 +1,14 @@
 .card {
   position: relative;
-  max-inline-size: 80rem;
   border-radius: 2rem;
   overflow: hidden;
+  transition: border-radius 100ms linear;
+}
+
+.card:has(.wrapperLink:focus-visible) {
+  transform: scale(0.95);
+  outline: 0.1rem solid;
+  outline-offset: 0.3rem;
 }
 
 .wrapperLink {
@@ -13,12 +19,13 @@
   transition: background-color 300ms ease-in-out;
 }
 
-.image{
+.image {
   block-size: auto;
   inline-size: 100%;
 }
 
 .tags {
+  --hover-translateY: -100%;
   position: absolute;
   display: flex;
   column-gap: 1.6rem;
@@ -36,6 +43,7 @@
 }
 
 .title {
+  --hover-translateY: 100%;
   position: absolute;
   inset-block-end: 0;
   font-size: 3rem;
@@ -46,13 +54,13 @@
 }
 
 @media (hover: hover) {
-  .tags {
-    transform: translateY(-100%);
-    will-change: contents;
+  .tags,
+  .title {
+    transform: translateY(var(--hover-translateY));
   }
 
-  .title {
-    transform: translateY(100%);
+  .card:hover {
+    border-radius: 0;
   }
 
   .card:hover .tags,

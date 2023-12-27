@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import styles from './Marquee.module.css'
 
 interface MarqueeProps {
@@ -13,18 +14,18 @@ export const Marquee: React.FC<MarqueeProps> = ({
     return texts.map((text, i) => {
       if (i === 0) {
         return (
-          <>
+          <Fragment key={i}>
             <h2 className={styles.text}>{text}</h2>
             <span className={styles.text}>✦</span>
-          </>
+          </Fragment>
         )
       }
 
       return (
-        <>
+        <Fragment key={i}>
           <span className={styles.text}>{text}</span>
           <span className={styles.text}>✦</span>
-        </>
+        </Fragment>
       )
     })
   }

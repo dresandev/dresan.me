@@ -1,9 +1,19 @@
 import Link from 'next/link'
+import clsx from 'clsx'
 import styles from './ProjectCard.module.css'
 
-export const ProjectCard = () => {
+interface ProjectCardProps {
+  className?: string
+}
+
+export const ProjectCard: React.FC<ProjectCardProps> = ({
+  className
+}) => {
   return (
-    <figure className={styles.card}>
+    <figure className={clsx(
+      styles.card,
+      className
+    )}>
       <Link className={styles.wrapperLink} href='/'>
         Dreflix
       </Link>
