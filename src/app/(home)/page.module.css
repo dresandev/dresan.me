@@ -7,7 +7,7 @@
 }
 
 .title {
-  font-size: 18rem;
+  font-size: clamp(7rem, 4.4rem + 8.125vw, 20rem);
   line-height: normal;
   text-align: center;
 }
@@ -22,10 +22,10 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 3rem;
-  padding-block: 25rem;
+  padding-block: clamp(15rem, 13rem + 6.25vw, 25rem);
   padding-inline: var(--padding-inline);
 }
 
 .projectCard {
-  flex: 1 1 60rem;
+  flex: 1 1 55rem;
 }

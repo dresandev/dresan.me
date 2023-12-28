@@ -1,11 +1,10 @@
 .marquee {
-  font-family: var(--bebas-neue-font);
   border-block: 0.1rem solid var(--border-color);
   overflow-x: hidden;
 }
 
 .marqueeTrack {
-  --gap: 2rem;
+  --gap: clamp(1.5rem, 1.2rem + 0.938vw, 3rem);
   display: flex;
   align-items: center;
   gap: var(--gap);
@@ -14,14 +13,9 @@
 }
 
 .text {
-  font-size: 6.5rem;
+  font-family: var(--bebas-neue-font);
+  font-size: clamp(3.5rem, 2.9rem + 1.875vw, 6.5rem);
   line-height: normal;
-}
-
-.text:nth-child(odd) {
-  flex-basis: 23rem;
-  flex-shrink: 0;
-  text-align: center;
 }
 
 .text:nth-child(4n - 3),
@@ -32,6 +26,6 @@
 
 @keyframes scroll {
   to {
-    transform: translateX(calc(-50% - var(--gap) / 2));
+    transform: translateX(calc(-50% - (var(--gap) / 2)));
   }
 }

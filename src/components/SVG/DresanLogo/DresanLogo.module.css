@@ -9,7 +9,7 @@
   stroke: currentColor;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   .logo {
     inline-size: 3.455rem;
   }

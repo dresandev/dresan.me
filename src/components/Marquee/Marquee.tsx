@@ -9,7 +9,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
   text
 }) => {
   const renderTexts = () => {
-    const texts = new Array(12).fill(text)
+    const texts = new Array(16).fill(text)
 
     return texts.map((text, i) => {
       if (i === 0) {
@@ -23,8 +23,8 @@ export const Marquee: React.FC<MarqueeProps> = ({
 
       return (
         <Fragment key={i}>
-          <span className={styles.text}>{text}</span>
-          <span className={styles.text}>✦</span>
+          <span className={styles.text} aria-hidden>{text}</span>
+          <span className={styles.text} aria-hidden>✦</span>
         </Fragment>
       )
     })
