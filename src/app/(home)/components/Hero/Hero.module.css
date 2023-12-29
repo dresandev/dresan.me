@@ -1,0 +1,19 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  block-size: 100%;
+  padding-block-start: var(--header-block-size);
+  padding-inline: var(--padding-inline);
+}
+
+.title {
+  font-size: clamp(7rem, 4.4rem + 8.125vw, 20rem);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.titleName {
+  color: transparent;
+  -webkit-text-stroke: 0.1rem var(--text-color);
+}

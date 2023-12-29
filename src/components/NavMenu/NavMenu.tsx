@@ -1,8 +1,9 @@
 'use client'
 
-import Link from 'next/link'
+import clsx from 'clsx'
 import { useBoolean } from '~/hooks/use-boolean'
 import { BurgerBtn } from './BurgerBtn'
+import { PageLinks } from '~/components/PageLinks'
 import styles from './NavMenu.module.css'
 
 export const NavMenu = () => {
@@ -12,35 +13,17 @@ export const NavMenu = () => {
   } = useBoolean(false)
 
   return (
-    <div>
+    <>
       <BurgerBtn
         isMenuOpen={isMenuOpen}
         toggleMenu={toggleMenu}
       />
 
-      <nav className={styles.nav}>
-        <ul className={styles.navList}>
-          <li>
-            <Link className={styles.navLink} href='/'>
-              Proyectos
-            </Link>
-          </li>
-          <li>
-            <Link className={styles.navLink} href='/'>
-              Sobre mí
-            </Link>
-          </li>
-          <li>
-            <Link className={styles.navLink} href='/'>
-              Contacto
-            </Link>
-          </li>
-          <li>
-            <Link className={styles.navLink} href='/'>
-              Notas
-            </Link>
-          </li>
-        </ul>
+      <nav className={clsx(
+        styles.nav,
+        isMenuOpen && styles.navOpen
+      )}>
+        <PageLinks />
 
         <a
           className={styles.contactBtn}
@@ -49,7 +32,6 @@ export const NavMenu = () => {
           ¿Algo en mente?
         </a>
       </nav>
-
-    </div>
+    </>
   )
 }

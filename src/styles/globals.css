@@ -8,6 +8,13 @@
   --max-inline-size: 192rem;
   --padding-inline: clamp(2rem, 1.4rem + 1.875vw, 5rem);
   --header-block-size: 7.5rem;
+  --section-padding-block: clamp(15rem, 13rem + 6.25vw, 25rem);
+}
+
+@media screen and (max-width: 915px) {
+  :root {
+    --header-block-size: 6.3rem;
+  }
 }
 
 ::selection {

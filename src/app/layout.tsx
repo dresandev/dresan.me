@@ -1,7 +1,8 @@
-import clsx from 'clsx'
 import type { Metadata } from 'next'
 import { Bebas_Neue, Montserrat } from 'next/font/google'
+import clsx from 'clsx'
 import { Header } from '~/components/Header'
+import { Toast } from '~/components/Toast'
 import '~/styles/globals.css'
 import '~/styles/reset.css'
 
@@ -55,6 +56,10 @@ export default function RootLayout({
         <main>
           {children}
         </main>
+
+        <div id='portal-container'>
+          <Toast />
+        </div>
       </body>
     </html>
   )

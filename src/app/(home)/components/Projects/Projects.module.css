@@ -1,0 +1,12 @@
+.projectsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  padding-block: var(--section-padding-block);
+  padding-inline: var(--padding-inline);
+}
+
+.projectCard {
+  flex: 1 1 55rem;
+}

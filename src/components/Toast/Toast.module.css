@@ -1,0 +1,55 @@
+.toast {
+  --translate-value: calc(100% + var(--space));
+  position: fixed;
+  bottom: var(--space);
+  right: var(--space);
+  max-inline-size: 38rem;
+  padding: 1.5rem;
+  background-color: var(--bg-color);
+  border: 0.1rem solid currentColor;
+  border-radius: 0.5rem;
+  font-size: clamp(1.4rem, 1.32rem + 0.25vw, 1.8rem);
+  animation: enterToastBottom 150ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.title {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.toast.hide {
+  animation-name: hideToast;
+}
+
+@media screen and (max-width: 768px) {
+  .toast {
+    max-inline-size: unset;
+    inset: var(--space);
+    bottom: unset;
+    animation-name: enterToastTop;
+  }
+}
+
+@keyframes enterToastBottom {
+  from {
+    transform: translateY(var(--translate-value));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes enterToastTop {
+  from {
+    transform: translateY(calc(-1 * var(--translate-value)));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes hideToast {
+  to {
+    transform: translateX(var(--translate-value));
+  }
+}

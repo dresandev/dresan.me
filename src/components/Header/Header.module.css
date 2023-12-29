@@ -4,12 +4,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-inline-size: var(--max-inline-size);
   inline-size: 100%;
   padding: 1.5rem var(--padding-inline);
   background-color: var(--bg-color);
 }
 
-.homeLink {
-  flex-shrink: 0;
+@media screen and (min-width: 915px) {
+  .header {
+    max-inline-size: var(--max-inline-size);
+    column-gap: 5rem;
+    border-block-end: 0.1rem solid var(--border-color);
+  }
+
+  .homeLink {
+    flex-shrink: 0;
+  }
 }

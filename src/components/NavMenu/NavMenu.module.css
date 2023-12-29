@@ -1,30 +1,27 @@
 .nav {
-  position: fixed;
-  inset: 0;
-  inset-block-start: var(--header-block-size);
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  padding: 2rem;
-  background-color: var(--bg-color);
+  align-items: center;
+  inline-size: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-1rem);
+  transition: transform 100ms, opacity 100ms cubic-bezier(0, 0, 0.25, 1),
+    visibility 0s linear 100ms;
 }
 
-.navList {
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
-}
-
-.navLink {
-  font-family: var(--bebas-neue-font);
-  font-size: 5rem;
+.navOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: transform 200ms, opacity 0.2ms cubic-bezier(0, 0, 0.25, 1),
+    visibility 0ms;
 }
 
 .contactBtn {
   --border-radius: 0.5rem;
   position: relative;
-  display: inline-block;
-  inline-size: 100%;
+  margin-inline-start: auto;
   padding: 1rem 2rem;
   text-align: center;
   font-weight: 500;
@@ -34,40 +31,59 @@
   outline: none;
 }
 
-.contactBtn:before {
-  content: '';
-  position: absolute;
-  inset-block-start: -0.2rem;
-  inset-inline-start: -0.2rem;
-  z-index: -1;
-  block-size: calc(100% + 0.4rem);
-  inline-size: calc(100% + 0.4rem);
-  border-radius: var(--border-radius);
-  opacity: 0;
-  filter: blur(0.5rem);
-  background: linear-gradient(
-    45deg,
-    var(--secondary-color),
-    hsl(27, 100%, 50%),
-    var(--primary-color),
-    hsl(103, 100%, 50%),
-    hsl(170, 100%, 50%),
-    hsl(230, 100%, 50%),
-    hsl(269, 100%, 50%),
-    hsl(313, 100%, 50%),
-    var(--secondary-color)
-  );
-  background-size: 400%;
-  transition: opacity 0.3s ease-in-out;
-  animation: animateBackground 20s linear infinite;
+@media (hover: hover) {
+  .contactBtn:before {
+    content: '';
+    position: absolute;
+    inset-block-start: -0.2rem;
+    inset-inline-start: -0.2rem;
+    z-index: -1;
+    block-size: calc(100% + 0.4rem);
+    inline-size: calc(100% + 0.4rem);
+    border-radius: var(--border-radius);
+    opacity: 0;
+    filter: blur(0.5rem);
+    background: linear-gradient(
+      45deg,
+      var(--secondary-color),
+      hsl(27, 100%, 50%),
+      var(--primary-color),
+      hsl(103, 100%, 50%),
+      hsl(170, 100%, 50%),
+      hsl(230, 100%, 50%),
+      hsl(269, 100%, 50%),
+      hsl(313, 100%, 50%),
+      var(--secondary-color)
+    );
+    background-size: 400%;
+    transition: opacity 0.3s ease-in-out;
+    animation: animateBackground 20s linear infinite;
+  }
+
+  .contactBtn:hover:before {
+    opacity: 1;
+  }
+
+  .contactBtn:active:before {
+    filter: blur(2px);
+  }
 }
 
-.contactBtn:hover:before {
-  opacity: 1;
-}
+@media screen and (max-width: 915px) {
+  .nav {
+    position: fixed;
+    inset: 0;
+    inset-block-start: var(--header-block-size);
+    flex-direction: column;
+    align-items: start;
+    padding: 2.4rem;
+    background-color: var(--bg-color);
+  }
 
-.contactBtn:active:before {
-  filter: blur(2px);
+  .contactBtn {
+    inline-size: 100%;
+    padding-block: 1.5rem;
+  }
 }
 
 @keyframes animateBackground {
@@ -79,56 +95,5 @@
   }
   100% {
     background-position: 0 0;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .nav {
-    position: fixed;
-    inset: 0;
-    inset-block-start: var(--header-block-size);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2rem;
-    background-color: var(--bg-color);
-  }
-  .nav {
-    position: static;
-    flex-direction: row;
-    padding: 0;
-    inline-size: max-content;
-  }
-
-  .navList {
-    flex-direction: row;
-    column-gap: 3.2rem;
-  }
-
-  .navLink {
-    font: inherit;
-    position: relative;
-    outline-offset: 0.8rem;
-    padding-block: 0.4rem;
-    font-weight: 500;
-  }
-
-  .navLink::before {
-    content: '';
-    position: absolute;
-    inset-inline-start: 0;
-    inset-block-end: 0;
-    inline-size: 100%;
-    transform: scaleX(0);
-    block-size: 0.1rem;
-    background-color: var(--secondary-color);
-    transition: transform 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform-origin: right;
-  }
-
-  .navLink:hover::before {
-    transition-timing-function: ease;
-    transform-origin: left;
-    transform: scaleX(1);
   }
 }

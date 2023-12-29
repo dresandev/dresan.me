@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.submitBtn {
+  max-inline-size: 24rem;
+  padding-block: 1rem;
+  background-color: unset;
+  border: 0.2rem solid currentColor;
+  border-radius: 0.5rem;
+  transition: color var(--hover-duration) ease-in-out,
+    border-color var(--hover-duration) ease-in-out;
+}
+
+.submitBtn:not(:disabled):is(:hover, :focus) {
+  outline: none;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

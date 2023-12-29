@@ -1,0 +1,29 @@
+.input,
+.textarea {
+  display: block;
+  padding-bottom: 1rem;
+  inline-size: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.2rem currentColor solid;
+  transition: border-bottom-color 200ms ease-in-out;
+}
+
+.textarea {
+  resize: none;
+  block-size: 20rem;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-bottom-color: var(--primary-color);
+}
+
+.label {
+  transition: color 200ms ease-in-out;
+}
+
+.label.focused {
+  color: var(--primary-color);
+}

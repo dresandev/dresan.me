@@ -1,0 +1,11 @@
+.navList {
+  display: flex;
+  column-gap: 3rem;
+}
+
+@media screen and (max-width: 915px) {
+  .navList {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+}
