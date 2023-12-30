@@ -6,7 +6,7 @@ export const Projects = () => {
   return (
     <section>
       <Marquee text='Proyectos' />
-      <div className={styles.projectsContainer}>
+      <div className={styles.container}>
         <ProjectCard className={styles.projectCard} />
         <ProjectCard className={styles.projectCard} />
       </div>

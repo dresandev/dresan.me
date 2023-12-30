@@ -1,12 +1,14 @@
 import { Marquee } from '~/components/Marquee'
-import styles from './Contact.module.css'
 import { ContactForm } from '~/components/ContactForm'
+import styles from './Contact.module.css'
 
 export const Contact = () => {
   return (
     <section>
       <Marquee text='Contacto' />
-      <ContactForm />
+      <div className={styles.container}>
+        <ContactForm />
+      </div>
     </section>
   )
 }

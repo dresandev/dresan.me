@@ -1,9 +1,10 @@
 'use client'
 
 import clsx from 'clsx'
+import { APP_ROUTES } from '~/constants'
 import { useBoolean } from '~/hooks/use-boolean'
 import { BurgerBtn } from './BurgerBtn'
-import { PageLinks } from '~/components/PageLinks'
+import { CustomLink } from '~/components/CustomLink'
 import styles from './NavMenu.module.css'
 
 export const NavMenu = () => {
@@ -23,7 +24,19 @@ export const NavMenu = () => {
         styles.nav,
         isMenuOpen && styles.navOpen
       )}>
-        <PageLinks />
+        <ul className={styles.navList}>
+          {
+            APP_ROUTES.map(({ href, label }, i) => (
+              <li key={i}>
+                <CustomLink
+                  className={styles.navLink}
+                  href={href}
+                  label={label}
+                />
+              </li>
+            ))
+          }
+        </ul>
 
         <a
           className={styles.contactBtn}

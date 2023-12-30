@@ -1,3 +1,30 @@
 .wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-inline-size: 174rem;
+  padding-inline: var(--padding-inline);
   padding-block: var(--section-padding-block);
+  margin-inline: auto;
+  font-size: clamp(1.8rem, 1.654rem + 0.388vw, 2.4rem);
+}
+
+.aboutText {
+  max-inline-size: 40ch;
+  margin-block-end: 3rem;
+  font-size: clamp(2.4rem, 2.254rem + 0.388vw, 3rem);
+}
+
+.subtitle {
+  margin-block-end: clamp(2rem, 1.757rem + 0.647vw, 3rem);
+  font-weight: 500;
+}
+
+.technologiesList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1rem;
+  column-gap: 3rem;
 }

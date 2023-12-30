@@ -1,11 +1,19 @@
+.label {
+  font-weight: 500;
+  transition: color 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+
 .input,
 .textarea {
   display: block;
   padding-bottom: 1rem;
   inline-size: 100%;
+  font-weight: 400;
+  color: var(--text-color);
   background-color: transparent;
   border: none;
-  border-bottom: 0.2rem currentColor solid;
+  border-bottom: 0.2rem solid currentColor;
+  outline: none;
   transition: border-bottom-color 200ms ease-in-out;
 }
 
@@ -16,14 +24,20 @@
 
 .input:focus,
 .textarea:focus {
-  outline: none;
-  border-bottom-color: var(--primary-color);
+  border-bottom-color: var(--active-color);
 }
 
-.label {
-  transition: color 200ms ease-in-out;
-}
+@media (hover: hover) {
+  .label {
+    opacity: 0.6;
+  }
 
-.label.focused {
-  color: var(--primary-color);
+  .label:has(:focus) {
+    opacity: 1;
+    color: var(--active-color);
+  }
+
+  .label:hover {
+    opacity: 1;
+  }
 }

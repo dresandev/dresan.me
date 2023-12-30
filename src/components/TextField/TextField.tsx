@@ -1,59 +1,38 @@
-import { useState } from 'react'
+import clsx from 'clsx'
 import styles from './TextField.module.css'
 
 type TextFieldProps = {
-  id: string;
   label?: string;
   multiline?: boolean;
 } & React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>;
 
 export const TextField: React.FC<TextFieldProps> = ({
-  id,
+  className,
   label,
   multiline = false,
   ...props
 }) => {
-  const [isFocused, setIsFocused] = useState<boolean>(false)
-
-  const handleInputBlur = () => setIsFocused(false)
-  const handleInputFocus = () => setIsFocused(true)
-
-  const commonProps: TextFieldProps = {
-    id,
-    onFocus: handleInputFocus,
-    onBlur: handleInputBlur,
-    ...props
-  }
-
-  const renderInput = () => {
-    if (multiline) {
-      return (
-        <textarea
-          className={styles.textarea}
-          {...commonProps}
-        />
-      )
-    }
-
-    return (
-      <input
-        className={styles.input}
-        {...commonProps}
-      />
-    )
-  }
-
-  const labelClasses = `${styles.label} ${isFocused ? styles.focused : ''}`
-
   return (
-    <div>
-      <label
-        className={labelClasses}
-        htmlFor={id}
-      >
-        {label}
-      </label>
-      {renderInput()}
-    </div>
+    <label className={clsx(
+      styles.label,
+      className
+    )}>
+      {label}
+      {
+        (multiline)
+          ? (
+            <textarea
+              className={styles.textarea}
+              {...props}
+            />
+          )
+          : (
+            <input
+              className={styles.input}
+              {...props}
+            />
+          )
+      }
+    </label>
   )
 }

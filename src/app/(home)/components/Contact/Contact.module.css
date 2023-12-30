@@ -1,0 +1,4 @@
+.container {
+  padding-block: var(--section-padding-block);
+  padding-inline: var(--padding-inline);
+}

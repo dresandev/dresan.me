@@ -1,26 +1,54 @@
 .form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas:
+    'name email'
+    'message message'
+    'submit submit';
   gap: 3rem;
+  max-inline-size: 163rem;
+  margin-inline: auto;
+}
+
+.nameInput {
+  grid-area: name;
+}
+.emailInput {
+  grid-area: email;
+}
+.messageInput {
+  grid-area: message;
 }
 
 .submitBtn {
+  grid-area: submit;
   max-inline-size: 24rem;
   padding-block: 1rem;
-  background-color: unset;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  font-weight: 500;
   border: 0.2rem solid currentColor;
   border-radius: 0.5rem;
-  transition: color var(--hover-duration) ease-in-out,
-    border-color var(--hover-duration) ease-in-out;
+  outline: none;
+  transition: color 300ms ease-in-out, border-color 300ms ease-in-out,
+    background-color 300ms ease-in-out;
 }
 
 .submitBtn:not(:disabled):is(:hover, :focus) {
-  outline: none;
-  border-color: var(--primary-color);
-  color: var(--primary-color);
+  color: var(--text-color);
+  background-color: transparent;
 }
 
 .submitBtn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+@media screen and (max-width: 915px) {
+  .form {
+    grid-template-areas:
+      'name name'
+      'email email'
+      'message message'
+      'submit submit';
+  }
 }

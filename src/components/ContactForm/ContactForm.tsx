@@ -1,6 +1,7 @@
 'use client'
 
 import { FormEvent, useState } from 'react'
+import clsx from 'clsx'
 import { useToastStore } from '~/store/use-toast-store'
 import { useForm } from '~/hooks/use-form'
 import { TextField } from '~/components/TextField'
@@ -78,11 +79,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
 
   return (
     <form
-      className={`${styles.form} ${className}`}
+      className={clsx(
+        styles.form,
+        className
+      )}
       onSubmit={handleOnSubmit}
     >
       <TextField
-        id='name-input'
+        className={styles.nameInput}
         name='name'
         label='Nombre'
         type='text'
@@ -92,7 +96,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
         onChange={handleInputChange}
       />
       <TextField
-        id='email-input'
+        className={styles.emailInput}
         name='email'
         label='Correo'
         type='email'
@@ -103,7 +107,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
         onChange={handleInputChange}
       />
       <TextField
-        id='message-input'
+        className={styles.messageInput}
         name='message'
         label='Mensaje'
         autoCorrect='off'

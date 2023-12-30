@@ -1,12 +1,11 @@
-.navLink {
+.customLink {
   position: relative;
   padding-block: 0.4rem;
-  outline-offset: 0.8rem;
   font-weight: 500;
 }
 
 @media (hover: hover) {
-  .navLink::before {
+  .customLink::before {
     content: '';
     position: absolute;
     inset-inline-start: 0;
@@ -19,16 +18,9 @@
     transform-origin: right;
   }
 
-  .navLink:hover::before {
+  .customLink:hover::before {
     transition-timing-function: ease;
     transform-origin: left;
     transform: scaleX(1);
   }
 }
-
-/* @media screen and (max-width: 915px) {
-  .navLink {
-    font-family: var(--bebas-neue-font);
-    font-size: 4rem;
-  }
-} */

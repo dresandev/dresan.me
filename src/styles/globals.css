@@ -3,12 +3,13 @@
   --text-color: hsl(0, 0%, 100%);
   --primary-color: hsl(54, 83%, 53%);
   --secondary-color: hsl(13, 100%, 50%);
+  --active-color: hsl(207, 90%, 77%);
   --border-color: hsl(0, 0%, 14%);
 
   --max-inline-size: 192rem;
   --padding-inline: clamp(2rem, 1.4rem + 1.875vw, 5rem);
   --header-block-size: 7.5rem;
-  --section-padding-block: clamp(15rem, 13rem + 6.25vw, 25rem);
+  --section-padding-block: clamp(10rem, 6.966rem + 8.091vw, 22.5rem);
 }
 
 @media screen and (max-width: 915px) {
@@ -43,12 +44,4 @@ body {
   font-size: 1.8rem;
   background-color: var(--bg-color);
   color: var(--text-color);
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--bebas-neue-font);
-  font-weight: 400;
 }

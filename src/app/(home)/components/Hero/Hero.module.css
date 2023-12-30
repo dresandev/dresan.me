@@ -8,6 +8,8 @@
 }
 
 .title {
+  font-family: var(--bebas-neue-font);
+  font-weight: 400;
   font-size: clamp(7rem, 4.4rem + 8.125vw, 20rem);
   line-height: 1.2;
   text-align: center;

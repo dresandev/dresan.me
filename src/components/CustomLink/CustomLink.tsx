@@ -1,17 +1,16 @@
-import Link from 'next/link'
+import Link, { type LinkProps } from 'next/link'
 import clsx from 'clsx'
 import styles from './CustomLink.module.css'
 
-interface CustomLinkProps {
-  className?: string
+type CustomLinkProps = {
   href: string
   label: string
-}
+} & LinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 export const CustomLink: React.FC<CustomLinkProps> = ({
   className,
-  href,
   label,
+  ...props
 }) => {
   return (
     <>
@@ -20,7 +19,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           styles.customLink,
           className
         )}
-        href={href}
+        {...props}
       >
         {label}
       </Link>
