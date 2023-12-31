@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { Marquee } from '~/components/Marquee'
 import { CustomLink } from '~/components/CustomLink'
 import styles from './About.module.css'
@@ -7,7 +8,10 @@ export const About = () => {
     <section>
       <Marquee text='Sobre mí' />
 
-      <div className={styles.wrapper}>
+      <div className={clsx(
+        'container',
+        styles.container
+      )}>
         <div>
           <p className={styles.aboutText}>
             Hola ✋🏻, me llámo Javier Andrés, me puedes decir Dresan, Soy desarrollador de software enfocado en el Front-end.

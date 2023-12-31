@@ -1,13 +1,11 @@
-.wrapper {
+.container {
   display: flex;
   justify-content: center;
   gap: 7rem;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-inline-size: 174rem;
-  padding-inline: var(--padding-inline);
+  padding-inline: var(--space-inline);
   padding-block: var(--section-padding-block);
-  margin-inline: auto;
   font-size: clamp(1.8rem, 1.654rem + 0.388vw, 2.4rem);
 }
 

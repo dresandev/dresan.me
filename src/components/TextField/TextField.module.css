@@ -1,6 +1,11 @@
 .label {
   font-weight: 500;
   transition: color 200ms ease-in-out, opacity 200ms ease-in-out;
+  user-select: none;
+}
+
+.label:has(:focus) {
+  color: var(--active-color);
 }
 
 .input,
@@ -11,9 +16,9 @@
   font-weight: 400;
   color: var(--text-color);
   background-color: transparent;
+  outline: none;
   border: none;
   border-bottom: 0.2rem solid currentColor;
-  outline: none;
   transition: border-bottom-color 200ms ease-in-out;
 }
 
@@ -25,19 +30,4 @@
 .input:focus,
 .textarea:focus {
   border-bottom-color: var(--active-color);
-}
-
-@media (hover: hover) {
-  .label {
-    opacity: 0.6;
-  }
-
-  .label:has(:focus) {
-    opacity: 1;
-    color: var(--active-color);
-  }
-
-  .label:hover {
-    opacity: 1;
-  }
 }

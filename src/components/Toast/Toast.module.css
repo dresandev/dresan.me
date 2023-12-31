@@ -1,8 +1,8 @@
 .toast {
-  --translate-value: calc(100% + var(--space));
+  --translate-value: calc(100% + var(--space-inline));
   position: fixed;
-  bottom: var(--space);
-  right: var(--space);
+  bottom: var(--space-inline);
+  right: var(--space-inline);
   max-inline-size: 38rem;
   padding: 1.5rem;
   background-color: var(--bg-color);
@@ -24,7 +24,7 @@
 @media screen and (max-width: 768px) {
   .toast {
     max-inline-size: unset;
-    inset: var(--space);
+    inset: var(--space-inline);
     bottom: unset;
     animation-name: enterToastTop;
   }

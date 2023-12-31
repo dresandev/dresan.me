@@ -5,8 +5,6 @@
     'message message'
     'submit submit';
   gap: 3rem;
-  max-inline-size: 163rem;
-  margin-inline: auto;
 }
 
 .nameInput {
@@ -26,16 +24,17 @@
   background-color: var(--text-color);
   color: var(--bg-color);
   font-weight: 500;
-  border: 0.2rem solid currentColor;
+  border: 0.2rem solid var(--text-color);
   border-radius: 0.5rem;
-  outline: none;
-  transition: color 300ms ease-in-out, border-color 300ms ease-in-out,
-    background-color 300ms ease-in-out;
+  outline-offset: 0.1rem;
+  transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
 }
 
-.submitBtn:not(:disabled):is(:hover, :focus) {
-  color: var(--text-color);
-  background-color: transparent;
+@media (hover: hover) {
+  .submitBtn:not(:disabled):hover {
+    color: var(--text-color);
+    background-color: transparent;
+  }
 }
 
 .submitBtn:disabled {

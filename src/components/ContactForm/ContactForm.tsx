@@ -81,7 +81,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
     <form
       className={clsx(
         styles.form,
-        className
+        className,
       )}
       onSubmit={handleOnSubmit}
     >

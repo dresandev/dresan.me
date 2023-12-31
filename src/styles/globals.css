@@ -7,7 +7,7 @@
   --border-color: hsl(0, 0%, 14%);
 
   --max-inline-size: 192rem;
-  --padding-inline: clamp(2rem, 1.4rem + 1.875vw, 5rem);
+  --space-inline: clamp(2rem, 1.4rem + 1.875vw, 5rem);
   --header-block-size: 7.5rem;
   --section-padding-block: clamp(10rem, 6.966rem + 8.091vw, 22.5rem);
 }
@@ -44,4 +44,14 @@ body {
   font-size: 1.8rem;
   background-color: var(--bg-color);
   color: var(--text-color);
+}
+
+.__next {
+  block-size: inherit;
+  isolation: isolate;
+}
+
+.container {
+  max-inline-size: 163rem;
+  margin-inline: auto;
 }

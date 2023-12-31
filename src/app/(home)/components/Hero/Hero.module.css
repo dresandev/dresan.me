@@ -4,7 +4,7 @@
   align-items: center;
   block-size: 100%;
   padding-block-start: var(--header-block-size);
-  padding-inline: var(--padding-inline);
+  padding-inline: var(--space-inline);
 }
 
 .title {

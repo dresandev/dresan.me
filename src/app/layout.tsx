@@ -52,10 +52,12 @@ export default function RootLayout({
         bebasNeue.variable,
         montserrat.className,
       )}>
-        <Header />
-        <main>
-          {children}
-        </main>
+        <div className='__next'>
+          <Header />
+          <main>
+            {children}
+          </main>
+        </div>
 
         <div id='portal-container'>
           <Toast />
