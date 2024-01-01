@@ -24,13 +24,22 @@
   inline-size: 100%;
 }
 
+.title {
+  --hover-translateY: 100%;
+  position: absolute;
+  inset-block-end: 0;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: normal;
+  padding: 1.4rem;
+}
+
 .tags {
   --hover-translateY: -100%;
   position: absolute;
   display: flex;
   column-gap: 1.6rem;
   padding: 1.4rem;
-  transition: transform 300ms ease-in-out;
 }
 
 .tagPill {
@@ -42,20 +51,10 @@
   backdrop-filter: blur(2rem);
 }
 
-.title {
-  --hover-translateY: 100%;
-  position: absolute;
-  inset-block-end: 0;
-  font-size: 3rem;
-  font-weight: bold;
-  line-height: normal;
-  padding: 1.4rem;
-  transition: transform 300ms ease-in-out;
-}
-
 @media (hover: hover) {
   .tags,
   .title {
+    transition: transform 300ms ease-in-out;
     transform: translateY(var(--hover-translateY));
   }
 
@@ -70,5 +69,20 @@
 
   .card:hover .wrapperLink {
     background-color: hsl(0 0% 0% / 0.55);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+
+  .tags {
+    display: none;
+  }
+
+  .wrapperLink {
+    background-image: linear-gradient(0deg, hsl(0 0% 0%) 0%, transparent 33%);
   }
 }

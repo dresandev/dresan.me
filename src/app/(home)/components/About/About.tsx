@@ -6,7 +6,7 @@ import styles from './About.module.css'
 export const About = () => {
   return (
     <section>
-      <Marquee text='Sobre mí' />
+      <Marquee text='Sobre mí ✦' />
 
       <div className={clsx(
         'container',

@@ -9,7 +9,7 @@
   align-items: center;
   gap: var(--gap);
   inline-size: max-content;
-  animation: scroll 20s linear infinite;
+  animation: scroll 5s linear infinite;
 }
 
 .text {

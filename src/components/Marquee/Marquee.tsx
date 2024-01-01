@@ -16,7 +16,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
         return (
           <Fragment key={i}>
             <h2 className={styles.text}>{text}</h2>
-            <span className={styles.text}>✦</span>
+            {/* <span className={styles.text}>✦</span> */}
           </Fragment>
         )
       }
@@ -24,7 +24,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
       return (
         <Fragment key={i}>
           <span className={styles.text} aria-hidden>{text}</span>
-          <span className={styles.text} aria-hidden>✦</span>
+          {/* <span className={styles.text} aria-hidden>✦</span> */}
         </Fragment>
       )
     })

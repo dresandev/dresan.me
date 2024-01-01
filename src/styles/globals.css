@@ -41,7 +41,7 @@
 body {
   max-inline-size: var(--max-inline-size);
   margin-inline: auto;
-  font-size: 1.8rem;
+  font-size: clamp(1.6rem, 1.551rem + 0.129vw, 1.8rem);
   background-color: var(--bg-color);
   color: var(--text-color);
 }
@@ -54,4 +54,8 @@ body {
 .container {
   max-inline-size: 163rem;
   margin-inline: auto;
+}
+
+.hideOverflow {
+  overflow-y: hidden;
 }

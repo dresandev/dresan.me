@@ -1,30 +1,21 @@
+import { SOCIAL_NETWORKS } from './Footer.constants'
 import { CustomLink } from '~/components/CustomLink'
+import { CurrentTime } from '~/components/CurrentTime'
 import styles from './Footer.module.css'
-
-const SOCIAL_NETWORKS = [
-  {
-    label: 'GitHub',
-    href: 'https://github.com/dresandev',
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/dresandev/',
-  },
-  {
-    label: 'CodePen',
-    href: 'https://codepen.io/dresandev',
-  },
-]
 
 export const Footer = () => {
   return (
-    <footer>
-      <div>
-        Popayán, CO
-        <span>21:20</span>
+    <footer className={styles.footer}>
+      <div className={styles.countryAndTime}>
+        <span>
+          Popayán, CO
+        </span>
+        <span className={styles.time}>
+          <CurrentTime />
+        </span>
       </div>
 
-      <ul className={styles.navList}>
+      <ul className={styles.socialNetworksList}>
         {
           SOCIAL_NETWORKS.map(({ href, label }, i) => (
             <li key={i}>
@@ -41,7 +32,7 @@ export const Footer = () => {
       </ul>
 
       <div>
-        {"Creatividad"}
+        {'"Creatividad" 👀'}
       </div>
     </footer >
   )

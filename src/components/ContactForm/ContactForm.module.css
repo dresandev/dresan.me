@@ -27,6 +27,7 @@
   border: 0.2rem solid var(--text-color);
   border-radius: 0.5rem;
   outline-offset: 0.1rem;
+  user-select: none;
   transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
 }
 

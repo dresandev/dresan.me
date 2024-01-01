@@ -4,31 +4,50 @@ import styles from './ProjectCard.module.css'
 
 interface ProjectCardProps {
   className?: string
+  slug: string
+  image: string
+  title: string
+  tags: string[]
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
-  className
+  className,
+  slug,
+  title,
+  tags,
+  image,
 }) => {
   return (
     <figure className={clsx(
       styles.card,
       className
     )}>
-      <Link className={styles.wrapperLink} href='/'>
-        Dreflix
+      <Link
+        className={styles.wrapperLink}
+        href={`/project/${slug}`}
+      >
+        {title}
       </Link>
       <div className={styles.tags}>
-        <div className={styles.tagPill}>Aplicacíon web</div>
-        <div className={styles.tagPill}>Proyecto Personal</div>
+        {
+          tags.map((tag, i) => (
+            <div
+              key={i}
+              className={styles.tagPill}
+            >
+              {tag}
+            </div>
+          ))
+        }
       </div>
 
       <img
         className={styles.image}
-        src='/images/dreflix/card/dreflix.webp'
+        src={image}
         alt=''
       />
       <figcaption className={styles.title}>
-        Dreflix
+        {title}
       </figcaption>
     </figure>
   )

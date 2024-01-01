@@ -12,7 +12,6 @@
 .aboutText {
   max-inline-size: 40ch;
   margin-block-end: 3rem;
-  font-size: clamp(2.4rem, 2.254rem + 0.388vw, 3rem);
 }
 
 .subtitle {

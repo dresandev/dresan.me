@@ -3,6 +3,7 @@
 import clsx from 'clsx'
 import { APP_ROUTES } from '~/constants'
 import { useBoolean } from '~/hooks/use-boolean'
+import { useToggleBodyOverflow } from '~/hooks/use-toggle-body-overflow'
 import { BurgerBtn } from './BurgerBtn'
 import { CustomLink } from '~/components/CustomLink'
 import styles from './NavMenu.module.css'
@@ -12,6 +13,8 @@ export const NavMenu = () => {
     value: isMenuOpen,
     toggle: toggleMenu
   } = useBoolean(false)
+
+  useToggleBodyOverflow(isMenuOpen)
 
   return (
     <>

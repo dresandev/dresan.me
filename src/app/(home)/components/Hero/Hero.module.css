@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  block-size: 100%;
+  min-block-size: 100%;
   padding-block-start: var(--header-block-size);
   padding-inline: var(--space-inline);
 }
@@ -10,7 +10,7 @@
 .title {
   font-family: var(--bebas-neue-font);
   font-weight: 400;
-  font-size: clamp(7rem, 4.4rem + 8.125vw, 20rem);
+  font-size: clamp(7rem, 3.845rem + 8.414vw, 20rem);
   line-height: 1.2;
   text-align: center;
 }
@@ -18,4 +18,10 @@
 .titleName {
   color: transparent;
   -webkit-text-stroke: 0.1rem var(--text-color);
+}
+
+@media (orientation: landscape) {
+  .title {
+    padding-block: 12rem;
+  }
 }
