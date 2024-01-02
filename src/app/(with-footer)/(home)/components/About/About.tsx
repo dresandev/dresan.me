@@ -1,12 +1,12 @@
 import clsx from 'clsx'
-import { Marquee } from '~/components/Marquee'
+import { TextScroller } from '~/components/TextScroller'
 import { CustomLink } from '~/components/CustomLink'
 import styles from './About.module.css'
 
 export const About = () => {
   return (
     <section>
-      <Marquee text='Sobre mí ✦' />
+      <TextScroller text='Sobre mí' />
 
       <div className={clsx(
         'container',
@@ -23,8 +23,9 @@ export const About = () => {
             className={styles.downloadCV}
             href='/'
             prefetch={false}
-            label='Descargar CV ↗'
-          />
+          >
+            Descargar CV ↗
+          </CustomLink>
         </div>
 
         <div>

@@ -1,15 +1,15 @@
-.marquee {
+.scroller {
   border-block: 0.1rem solid var(--border-color);
   overflow-x: hidden;
 }
 
-.marqueeTrack {
-  --gap: clamp(1.5rem, 1.2rem + 0.938vw, 3rem);
+.scrollerInner {
+  --gap: clamp(1rem, 0.757rem + 0.647vw, 2rem);
   display: flex;
   align-items: center;
   gap: var(--gap);
   inline-size: max-content;
-  animation: scroll 5s linear infinite;
+  animation: scroll 25s linear infinite;
 }
 
 .text {
@@ -19,8 +19,7 @@
   line-height: normal;
 }
 
-.text:nth-child(4n - 3),
-.text:nth-child(4n - 2) {
+.text:nth-child(even) {
   color: transparent;
   -webkit-text-stroke: 0.1rem var(--text-color);
 }

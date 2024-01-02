@@ -1,23 +1,23 @@
 import clsx from 'clsx'
-import { Marquee } from '~/components/Marquee'
+import { projects } from '~/data/projects'
+import { TextScroller } from '~/components/TextScroller'
 import { ProjectCard } from '~/components/ProjectCard'
 import styles from './Projects.module.css'
-import { projects } from '~/data/projects'
 
 export const Projects = () => {
   return (
     <section>
-      <Marquee text='Proyectos' />
+      <TextScroller text='Proyectos' />
       <div className={clsx(
         'container',
         styles.container
       )}>
-        {projects.map(({ slug, title, tags, image }, i) => (
+        {projects.map(({ slug, title, tags, cardImage }, i) => (
           <ProjectCard
             key={i}
             className={styles.projectCard}
             slug={slug}
-            image={image}
+            image={cardImage}
             title={title}
             tags={tags}
           />

@@ -34,8 +34,9 @@ export const NavMenu = () => {
                 <CustomLink
                   className={styles.navLink}
                   href={href}
-                  label={label}
-                />
+                >
+                  {label}
+                </CustomLink>
               </li>
             ))
           }

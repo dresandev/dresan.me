@@ -24,8 +24,9 @@ export const Footer = () => {
                 prefetch={false}
                 href={href}
                 target='_blank'
-                label={label}
-              />
+              >
+                {label}
+              </CustomLink>
             </li>
           ))
         }

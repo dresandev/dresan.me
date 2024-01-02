@@ -4,12 +4,11 @@ import styles from './CustomLink.module.css'
 
 type CustomLinkProps = {
   href: string
-  label: string
 } & LinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 export const CustomLink: React.FC<CustomLinkProps> = ({
+  children,
   className,
-  label,
   ...props
 }) => {
   return (
@@ -21,7 +20,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
         )}
         {...props}
       >
-        {label}
+        {children}
       </Link>
     </>
   )

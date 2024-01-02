@@ -1,0 +1,110 @@
+.container {
+  --block-space: clamp(10rem, 9rem + 3.125vw, 15rem);
+  max-inline-size: 160rem;
+  margin-inline: auto;
+  padding-inline: var(--space-inline);
+}
+
+.article {
+  display: flex;
+  align-items: flex-start;
+  gap: 5rem;
+  padding-block-start: calc(var(--header-size) + 15rem);
+  font-size: clamp(1.6rem, 1.56rem + 0.125vw, 1.8rem);
+}
+
+.pinArea {
+  flex: 1;
+  position: sticky;
+  top: calc(var(--header-size) + 5rem);
+  padding-bottom: 12rem;
+}
+
+.title {
+  font-family: var(--font-bebas-neue);
+  font-size: clamp(7rem, 6.6rem + 1.25vw, 9rem);
+}
+
+.description {
+  max-inline-size: 50ch;
+  margin-bottom: 5rem;
+  white-space: pre-wrap;
+}
+
+.details {
+  display: flex;
+  align-items: flex-end;
+  gap: 3rem;
+}
+
+.details__caption {
+  margin-bottom: 1rem;
+  font-size: clamp(1.4rem, 1.36rem + 0.125vw, 1.6rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--secondary-text-color);
+}
+
+.details__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 0.8rem + 0.625vw, 2rem);
+  margin-left: auto;
+}
+
+.longImagesArea {
+  flex: 0.5;
+}
+
+.longImagesArea,
+.imagesArea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--block-space);
+}
+
+.imagesArea {
+  max-inline-size: max-content;
+  margin-inline: auto;
+  margin-block: var(--block-space);
+}
+
+.longImagesArea__image,
+.imagesArea__image {
+  block-size: auto;
+  pointer-events: none;
+}
+
+.navigation {
+  display: flex;
+}
+
+.navigation__link {
+  flex: 1;
+  padding-block: clamp(5rem, 4.4rem + 1.875vw, 8rem);
+  font-family: var(--font-bebas-neue);
+  font-size: clamp(4rem, 3.4rem + 1.875vw, 7rem);
+  text-align: center;
+  text-decoration: none;
+}
+
+.navigation__link:nth-of-type(1) {
+  border-inline-end: 0.1rem solid currentColor;
+}
+
+.navigation__link:is(:hover, :focus)::before {
+  transform: scale(var(--scale-value));
+}
+
+@media screen and (max-width: 768px) {
+  .article {
+    flex-direction: column;
+    padding-block-start: calc(var(--header-size) + 5rem);
+  }
+
+  .pinArea {
+    position: unset;
+    top: unset;
+    padding-bottom: unset;
+  }
+}

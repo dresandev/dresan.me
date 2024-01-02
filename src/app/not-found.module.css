@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 100dvh;
+}
+
+.title {
+  font-size: clamp(14rem, 11.8rem + 6.875vw, 25rem);
+  line-height: normal;
+}
+
+.link {
+  margin-block-start: 2rem;
+  color: var(--primary-color);
+}
+
+@media screen and (max-width: 768px) {
+  @media (orientation: landscape) {
+    .container {
+      padding-block: calc(var(--header-block-size) + 8rem) 8rem;
+      padding-inline: var(--space-inline);
+    }
+  }
+}
