@@ -2,6 +2,7 @@
 
 import clsx from 'clsx'
 import { APP_ROUTES } from '~/constants'
+import { getRandomKey } from '~/utils/get-random-key'
 import { useBoolean } from '~/hooks/use-boolean'
 import { useToggleBodyOverflow } from '~/hooks/use-toggle-body-overflow'
 import { BurgerBtn } from './BurgerBtn'
@@ -29,8 +30,8 @@ export const NavMenu = () => {
       )}>
         <ul className={styles.navList}>
           {
-            APP_ROUTES.map(({ href, label }, i) => (
-              <li key={i}>
+            APP_ROUTES.map(({ href, label }) => (
+              <li key={getRandomKey()}>
                 <CustomLink
                   className={styles.navLink}
                   href={href}

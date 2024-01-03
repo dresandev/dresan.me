@@ -8,13 +8,13 @@
 
   --max-inline-size: 192rem;
   --space-inline: clamp(2rem, 1.4rem + 1.875vw, 5rem);
-  --header-block-size: 7.5rem;
+  --header-block-size: 7rem;
   --section-padding-block: clamp(10rem, 6.966rem + 8.091vw, 22.5rem);
 }
 
 @media screen and (max-width: 915px) {
   :root {
-    --header-block-size: 6.3rem;
+    --header-block-size: 5.3rem;
   }
 }
 
@@ -53,6 +53,7 @@ body {
 
 .container {
   max-inline-size: 163rem;
+  padding-inline: var(--space-inline);
   margin-inline: auto;
 }
 

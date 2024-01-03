@@ -1,0 +1,46 @@
+.info {
+  padding-block-end: 12rem;
+}
+
+.title {
+  font-size: clamp(7rem, 6.6rem + 1.25vw, 9rem);
+}
+
+.description {
+  max-inline-size: 60ch;
+  padding-block-end: 5rem;
+  white-space: pre-wrap;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 3rem;
+}
+
+.statsRole {
+  margin-right: auto;
+}
+
+.statsCaption {
+  padding-block-end: 1rem;
+  font-size: clamp(1.4rem, 1.36rem + 0.125vw, 1.6rem);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.statsLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 0.8rem + 0.625vw, 2rem);
+}
+
+@media screen and (min-width: 768px) {
+  .info {
+    inline-size: max-content;
+    position: sticky;
+    top: calc(var(--header-block-size) + 5rem);
+    padding-block-end: 12rem;
+  }
+}

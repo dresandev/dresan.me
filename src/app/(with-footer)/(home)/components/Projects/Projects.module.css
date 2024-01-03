@@ -4,7 +4,6 @@
   justify-content: center;
   gap: 3rem;
   padding-block: var(--section-padding-block);
-  padding-inline: var(--space-inline);
 }
 
 .projectCard {

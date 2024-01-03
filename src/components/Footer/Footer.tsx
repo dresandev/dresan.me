@@ -1,3 +1,4 @@
+import { getRandomKey } from '~/utils/get-random-key'
 import { SOCIAL_NETWORKS } from './Footer.constants'
 import { CustomLink } from '~/components/CustomLink'
 import { CurrentTime } from '~/components/CurrentTime'
@@ -17,8 +18,8 @@ export const Footer = () => {
 
       <ul className={styles.socialNetworksList}>
         {
-          SOCIAL_NETWORKS.map(({ href, label }, i) => (
-            <li key={i}>
+          SOCIAL_NETWORKS.map(({ href, label }) => (
+            <li key={getRandomKey()}>
               <CustomLink
                 className={styles.navLink}
                 prefetch={false}
