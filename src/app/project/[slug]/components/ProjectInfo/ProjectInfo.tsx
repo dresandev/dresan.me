@@ -1,4 +1,6 @@
+import { getRandomKey } from '~/utils/get-random-key'
 import { CustomLink } from '~/components/CustomLink'
+import { TagPill } from '~/components/TagPill'
 import styles from './ProjectInfo.module.css'
 
 interface ProjectInfoProps {
@@ -18,6 +20,7 @@ export const ProjectInfo: React.FC<ProjectInfoProps> = ({
   role,
   codeUrl,
   liveUrl,
+  tags,
 }) => {
   return (
     <section className={styles.info}>
@@ -27,6 +30,17 @@ export const ProjectInfo: React.FC<ProjectInfoProps> = ({
       <p className={styles.description}>
         {description}
       </p>
+
+      <div className={styles.tags}>
+        {
+          tags.map(tag => (
+            <TagPill
+              key={getRandomKey()}
+              tagName={tag}
+            />
+          ))
+        }
+      </div>
 
       <div className={styles.stats}>
         <div>

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { projects } from '~/data/projects'
 import { getRandomKey } from '~/utils/get-random-key'
@@ -53,7 +54,7 @@ export default function ProjectPage({
   return (
     <>
       <div className='container'>
-        <article className={styles.article}>
+        <article>
           <div className={styles.topContent}>
             <ProjectInfo
               title={title}
@@ -97,6 +98,23 @@ export default function ProjectPage({
       </div>
 
       <TextScroller text='Ver más proyectos' />
+
+      <nav className={styles.nav}>
+        <Link
+          data-text='Anterior'
+          className={styles.navLink}
+          href={'/'}
+        >
+          Anterior
+        </Link>
+        <Link
+          data-text='Siguiente'
+          className={styles.navLink}
+          href={'/'}
+        >
+          Siguiente
+        </Link>
+      </nav>
     </>
   )
 }

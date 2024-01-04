@@ -1,4 +1,11 @@
 :root {
+  --bg-color-hsl: 0 0% 6%;
+  --text-color-hsl: 0 0% 88%;
+  --primary-color-hsl: 54 83% 53%;
+  --secondary-color-hsl: 13 100% 50%;
+  --active-color-hsl: 207 90% 77%;
+  --border-color-hsl: 0 0% 14%;
+
   --bg-color: hsl(0, 0%, 6%);
   --text-color: hsl(0, 0%, 88%);
   --primary-color: hsl(54, 83%, 53%);
@@ -12,9 +19,9 @@
   --section-padding-block: clamp(10rem, 6.966rem + 8.091vw, 22.5rem);
 }
 
-@media screen and (max-width: 915px) {
+@media screen and (max-width: 768px) {
   :root {
-    --header-block-size: 5.3rem;
+    --header-block-size: 6.3rem;
   }
 }
 
@@ -24,7 +31,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 1.6rem;
+  inline-size: 1.6rem;
 }
 
 ::-webkit-scrollbar-thumb {

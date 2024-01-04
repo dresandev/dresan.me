@@ -43,7 +43,7 @@
   cursor: not-allowed;
 }
 
-@media screen and (max-width: 915px) {
+@media screen and (max-width: 768px) {
   .form {
     grid-template-areas:
       'name name'

@@ -1,8 +1,8 @@
 .toast {
   --translate-value: calc(100% + var(--space-inline));
   position: fixed;
-  bottom: var(--space-inline);
-  right: var(--space-inline);
+  inset-block-end: var(--space-inline);
+  inset-inline-end: var(--space-inline);
   max-inline-size: 38rem;
   padding: 1.5rem;
   background-color: var(--bg-color);
@@ -14,7 +14,7 @@
 
 .title {
   font-weight: 500;
-  margin-bottom: 0.5rem;
+  margin-block-end: 0.5rem;
 }
 
 .toast.hide {
@@ -23,9 +23,9 @@
 
 @media screen and (max-width: 768px) {
   .toast {
-    max-inline-size: unset;
     inset: var(--space-inline);
-    bottom: unset;
+    inset-block-end: unset;
+    max-inline-size: unset;
     animation-name: enterToastTop;
   }
 }

@@ -1,0 +1,11 @@
+.tagPill {
+  padding: 1rem 2.1rem;
+  border: 0.1rem solid currentColor;
+  border-radius: 3rem;
+  font-size: 1.6rem;
+  line-height: normal;
+}
+
+.blurredTagPill {
+  backdrop-filter: blur(2rem);
+}

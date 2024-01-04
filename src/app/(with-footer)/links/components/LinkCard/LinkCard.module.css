@@ -1,0 +1,51 @@
+.linkCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  outline-color: transparent;
+  transition: background-color 250ms ease-in-out,
+    outline-color 250ms ease-in-out;
+}
+
+.linkCard:nth-child(4n) {
+  --hover-color-hsl: 275 78% 25%;
+}
+.linkCard:nth-child(4n - 1) {
+  --hover-color-hsl: 330 78% 25%;
+}
+.linkCard:nth-child(4n - 2) {
+  --hover-color-hsl: 153 91% 25%;
+}
+.linkCard:nth-child(4n - 3) {
+  --hover-color-hsl: 217 78% 37%;
+}
+
+.linkCard:is(:hover, :focus) {
+  background-color: hsl(var(--hover-color-hsl) / 0.1);
+  outline: 0.1rem solid hsl(var(--hover-color-hsl) / 0.8);
+}
+
+.description {
+  font-size: clamp(1.6rem, 1.56rem + 0.125vw, 1.8rem);
+}
+
+.name {
+  font-weight: 500;
+}
+
+.arrowIcon {
+  --arrow-size: 2.4rem;
+  display: inline-block;
+  inline-size: var(--arrow-size);
+  block-size: var(--arrow-size);
+  margin-inline-start: 0.5rem;
+  vertical-align: middle;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+
+.linkCard:hover .arrowIcon {
+  opacity: 1;
+}

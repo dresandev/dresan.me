@@ -11,14 +11,14 @@
 .input,
 .textarea {
   display: block;
-  padding-bottom: 1rem;
+  padding-block-end: 1rem;
   inline-size: 100%;
   font-weight: 400;
   color: var(--text-color);
   background-color: transparent;
   outline: none;
   border: none;
-  border-bottom: 0.2rem solid currentColor;
+  border-block-end: 0.2rem solid currentColor;
   transition: border-bottom-color 200ms ease-in-out;
 }
 
@@ -29,5 +29,5 @@
 
 .input:focus,
 .textarea:focus {
-  border-bottom-color: var(--active-color);
+  border-block-end-color: var(--active-color);
 }

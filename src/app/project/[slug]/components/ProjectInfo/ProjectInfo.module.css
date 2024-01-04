@@ -3,13 +3,21 @@
 }
 
 .title {
-  font-size: clamp(7rem, 6.6rem + 1.25vw, 9rem);
+  font-size: clamp(6rem, 5.272rem + 1.942vw, 9rem);
 }
 
 .description {
   max-inline-size: 60ch;
-  padding-block-end: 5rem;
+  padding-block-end: 3rem;
   white-space: pre-wrap;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 1rem;
+  padding-block-end: 5rem;
 }
 
 .stats {
@@ -20,7 +28,7 @@
 }
 
 .statsRole {
-  margin-right: auto;
+  margin-inline-end: auto;
 }
 
 .statsCaption {
@@ -38,9 +46,9 @@
 
 @media screen and (min-width: 768px) {
   .info {
-    inline-size: max-content;
     position: sticky;
-    top: calc(var(--header-block-size) + 5rem);
+    inset-block-start: calc(var(--header-block-size) + 5rem);
+    inline-size: max-content;
     padding-block-end: 12rem;
   }
 }

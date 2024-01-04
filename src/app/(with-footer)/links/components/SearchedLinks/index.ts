@@ -1,0 +1,1 @@
+export { SearchedLinks } from './SearchedLinks'

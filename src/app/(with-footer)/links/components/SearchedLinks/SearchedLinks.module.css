@@ -1,0 +1,8 @@
+.notFountMsg {
+  margin-block: 17rem;
+  text-align: center;
+}
+
+.notFountMsg span {
+  color: var(--active-color);
+}

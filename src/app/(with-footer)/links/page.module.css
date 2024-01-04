@@ -1,0 +1,10 @@
+.title {
+  padding-block: calc(var(--header-block-size) + 5rem) 2rem;
+  font-family: var(--font-bebas-neue);
+  font-size: clamp(5.5rem, 4.65rem + 2.265vw, 9rem);
+}
+
+.description {
+  max-inline-size: 60ch;
+  margin-block-end: 5rem;
+}

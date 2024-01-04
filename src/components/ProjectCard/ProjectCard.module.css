@@ -42,15 +42,6 @@
   padding: 1.4rem;
 }
 
-.tagPill {
-  padding: 1rem 2.1rem;
-  border: 0.1rem solid currentColor;
-  border-radius: 3rem;
-  font-size: 1.6rem;
-  line-height: normal;
-  backdrop-filter: blur(2rem);
-}
-
 @media (hover: hover) {
   .tags,
   .title {
@@ -68,7 +59,7 @@
   }
 
   .card:hover .wrapperLink {
-    background-color: hsl(0 0% 0% / 0.55);
+    background-color: hsl(0 0% 0% / 0.6);
   }
 }
 

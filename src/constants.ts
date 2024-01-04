@@ -1,10 +1,10 @@
 export const APP_ROUTES = [
   {
-    href: '/',
+    href: '/notes',
     label: 'Notas'
   },
   {
-    href: '/',
+    href: '/links',
     label: 'Links'
   },
 ]

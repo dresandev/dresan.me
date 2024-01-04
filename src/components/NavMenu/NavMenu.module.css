@@ -61,7 +61,7 @@
   }
 }
 
-@media screen and (max-width: 915px) {
+@media screen and (max-width: 768px) {
   .nav {
     position: fixed;
     inset: 0;
