@@ -14,12 +14,12 @@ export const Projects = () => {
         styles.container
       )}>
         {
-          projects.map(({ slug, title, tags, cardImage }) => (
+          projects.map(({ slug, title, tags, cardImages }) => (
             <ProjectCard
               key={getRandomKey()}
               className={styles.projectCard}
               slug={slug}
-              image={cardImage}
+              images={cardImages}
               title={title}
               tags={tags}
             />

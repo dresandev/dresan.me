@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { TextScroller } from '~/components/TextScroller'
 import { CustomLink } from '~/components/CustomLink'
+import { ArrowIcon } from '~/components/SVG'
 import styles from './About.module.css'
 
 export const About = () => {
@@ -14,9 +15,8 @@ export const About = () => {
       )}>
         <div>
           <p className={styles.aboutText}>
-            Hola ✋🏻, me llámo Javier Andrés, me puedes decir Dresan, Soy desarrollador de software enfocado en el Front-end.
-            Fan del desarrollo de UX/UI y la tecnología.
-            Diseñádores y yo 🫱🏻‍🫲🏿.
+            Hola ✋🏻, me llámo Javier Andrés, me puedes decir Dresan. Soy desarrollador de software enfocado en el Front-end.
+            Fan del desarrollo de UX/UI, desarrollo de software, tecnologias web y CSS 💙.
           </p>
 
           <CustomLink
@@ -24,7 +24,12 @@ export const About = () => {
             href='/'
             prefetch={false}
           >
-            Descargar CV ↗
+            Descargar CV
+            <ArrowIcon
+              width={30}
+              height={30}
+              direction='UP_RIGHT'
+            />
           </CustomLink>
         </div>
 

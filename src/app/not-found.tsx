@@ -1,5 +1,6 @@
 import { CustomLink } from '~/components/CustomLink'
 import styles from './not-found.module.css'
+import { ArrowIcon } from '~/components/SVG'
 
 export const metadata = {
   title: '404 — No encontrado',
@@ -14,6 +15,7 @@ export default function NotFound() {
         className={styles.link}
         href='/'
       >
+        <ArrowIcon direction='UP_LEFT' />
         Volver al inicio
       </CustomLink>
     </div>

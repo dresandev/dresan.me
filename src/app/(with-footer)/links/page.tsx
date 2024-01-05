@@ -4,7 +4,7 @@ import styles from './page.module.css'
 
 export const metadata = {
   title: 'Dresan — Links',
-  description: 'Coleccion de una gran variedad de links sobre desarrollo de software que me han sido utiles.',
+  description: 'Colección de links con recursos y herramientas sobre desarrollo de software que me han sido útiles.',
 }
 
 export default function LinksPage() {

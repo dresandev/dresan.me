@@ -9,14 +9,11 @@
   align-items: center;
   gap: var(--gap);
   inline-size: max-content;
-  animation: scroll 30s linear infinite;
+  animation: scroll 35s linear infinite;
 }
 
 .text {
-  font-family: var(--bebas-neue-font);
-  font-weight: 400;
-  font-size: clamp(4rem, 3.393rem + 1.618vw, 6.5rem);
-  line-height: normal;
+  font: clamp(4rem, 3.515rem + 1.294vw, 6rem) / normal var(--bebas-neue-font);
 }
 
 .text:nth-child(even) {

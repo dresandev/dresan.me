@@ -13,7 +13,7 @@ export const LinksSearchBar = () => {
   return (
     <input
       className={styles.searchBar}
-      role='search'
+      role='searchbox'
       name='keywords'
       type='text'
       placeholder='Escribe una palabra clave'

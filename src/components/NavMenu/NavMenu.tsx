@@ -5,6 +5,7 @@ import { APP_ROUTES } from '~/constants'
 import { getRandomKey } from '~/utils/get-random-key'
 import { useBoolean } from '~/hooks/use-boolean'
 import { useToggleBodyOverflow } from '~/hooks/use-toggle-body-overflow'
+import { useOnPathnameChange } from '~/hooks/use-on-pathname-change'
 import { BurgerBtn } from './BurgerBtn'
 import { CustomLink } from '~/components/CustomLink'
 import styles from './NavMenu.module.css'
@@ -12,10 +13,11 @@ import styles from './NavMenu.module.css'
 export const NavMenu = () => {
   const {
     value: isMenuOpen,
-    toggle: toggleMenu
+    toggle: toggleMenu,
+    setFalse: closeMenu,
   } = useBoolean(false)
-
   useToggleBodyOverflow(isMenuOpen)
+  useOnPathnameChange(closeMenu)
 
   return (
     <>

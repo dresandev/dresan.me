@@ -68,12 +68,14 @@ export default function ProjectPage({
 
             <section className={styles.mobileImagesSection}>
               {
-                mobileImages.map(image => (
+                mobileImages.map(images => (
                   <figure key={getRandomKey()}>
                     <img
                       className={styles.mobileImage}
-                      src={image}
+                      src={images.large}
                       alt='Imagen de proyecto'
+                      width={427}
+                      height={926}
                     />
                   </figure>
                 ))
@@ -83,12 +85,24 @@ export default function ProjectPage({
 
           <section className={styles.desktopImagesSection}>
             {
-              desktopImages.map(image => (
+              desktopImages.map(images => (
                 <figure key={getRandomKey()}>
                   <img
                     className={styles.desktopImage}
-                    src={image}
+                    srcSet={`
+                      ${images.large} 1530w,
+                      ${images.medium} 1000w,
+                      ${images.small} 500w,
+                    `}
+                    sizes='
+                      (max-width: 550px) 500px,
+                      (max-width: 1024px) 1000px,
+                      1530px
+                    '
+                    src={images.large}
                     alt='Imagen de proyecto'
+                    width={1530}
+                    height={757}
                   />
                 </figure>
               ))

@@ -1,7 +1,6 @@
 .gridContainer {
-  --space: 5rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
-  gap: var(--space);
-  padding-block: var(--space);
+  gap: clamp(3rem, 2.515rem + 1.294vw, 5rem);
+  padding-block: 5rem;
 }

@@ -4,11 +4,11 @@
   background-color: transparent;
   border: 0.1rem solid currentColor;
   border-radius: 0.5rem;
+  outline: none;
   transition: border-color 250ms ease;
 }
 
 .searchBar:focus {
-  outline: none;
   border-color: var(--active-color);
   box-shadow: 0 0 0 0.4rem hsl(var(--active-color-hsl) / 0.1);
 }

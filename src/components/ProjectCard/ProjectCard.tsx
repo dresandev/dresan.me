@@ -7,7 +7,7 @@ import styles from './ProjectCard.module.css'
 interface ProjectCardProps {
   className?: string
   slug: string
-  image: string
+  images: { large: string, small: string }
   title: string
   tags: string[]
 }
@@ -17,7 +17,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   slug,
   title,
   tags,
-  image,
+  images,
 }) => {
   return (
     <figure className={clsx(
@@ -44,7 +44,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
       <img
         className={styles.image}
-        src={image}
+        srcSet={`
+          ${images.large} 800w,
+          ${images.small} 400w,
+        `}
+        sizes='
+          (max-width: 445px) 400px,
+          800px
+        '
+        src={images.large}
         alt=''
       />
       <figcaption className={styles.title}>

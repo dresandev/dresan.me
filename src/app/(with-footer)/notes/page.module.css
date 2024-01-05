@@ -1,0 +1,25 @@
+.container {
+  padding-block-start: calc(var(--header-block-size) + 5rem);
+  padding-inline: var(--space-inline);
+}
+
+.title {
+  padding-block-end: 4rem;
+  font-size: clamp(5.5rem, 4.65rem + 2.265vw, 9rem);
+  text-align: center;
+}
+
+.description {
+  max-inline-size: 50ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-inline-size: 80rem;
+  padding-block: clamp(5rem, 4.4rem + 1.875vw, 8rem);
+  margin-inline: auto;
+}

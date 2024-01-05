@@ -1,9 +1,8 @@
 .footer {
   justify-content: space-between;
   padding-inline: var(--space-inline);
-  padding-block: clamp(10rem, 8.786rem + 3.236vw, 15rem) 5rem;
-  clip-path: polygon(0 0, 100% 8vh, 100% 100%, 0% 100%);
-  background: linear-gradient(0deg, hsl(0, 0%, 8%), hsl(0, 0%, 12%));
+  padding-block: 10rem 5rem;
+  border-block-start: 0.1rem solid var(--border-color);
 }
 
 .footer,

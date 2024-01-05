@@ -18,6 +18,12 @@
   font-weight: 500;
 }
 
+.downloadCV {
+  display: inline-flex;
+  column-gap: 0.5rem;
+  align-items: center;
+}
+
 .technologiesList {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

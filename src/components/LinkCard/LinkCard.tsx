@@ -15,9 +15,7 @@ export const LinkCard: React.FC<LinkCardProps> = ({
       href={url}
       target='_blank'
     >
-      <p className={styles.description}>
-        {description}
-      </p>
+      <p>{description}</p>
 
       <div className={styles.name}>
         {name}
