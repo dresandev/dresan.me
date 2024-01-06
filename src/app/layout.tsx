@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import { Bebas_Neue, Montserrat } from 'next/font/google'
 import clsx from 'clsx'
 import { Header } from '~/components/Header'
@@ -6,7 +5,7 @@ import { Toast } from '~/components/Toast'
 import '~/styles/globals.css'
 import '~/styles/reset.css'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Dresan — Frontend developer',
   description: 'Web personal donde puedes descubrir mis habilidades, proyectos y recursos sobre desarrollo web. Explora mi trabajo y contáctame si tienes un proyecto en mente.',
   metadataBase: new URL('https://dresan.me'),

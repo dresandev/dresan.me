@@ -10,6 +10,10 @@
   border-block-end: 0.1rem solid var(--border-color);
 }
 
+.navMenuMobile {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .header {
     max-inline-size: var(--max-inline-size);

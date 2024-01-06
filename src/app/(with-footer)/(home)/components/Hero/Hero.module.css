@@ -7,13 +7,15 @@
 }
 
 .hero {
+  position: relative;
   display: grid;
   min-block-size: 100%;
   padding-block-start: var(--header-block-size);
   padding-inline: var(--space-inline);
+  overflow: hidden;
 }
 
-.svg {
+.titleBlur {
   position: absolute;
 }
 
@@ -34,6 +36,17 @@
   background-clip: text;
   filter: url(#f);
   animation: k 5s linear infinite;
+}
+
+.animalogo {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-end: 0;
+  z-index: -1;
+  block-size: auto;
+  inline-size: clamp(20rem, 17.573rem + 6.472vw, 30rem);
+  opacity: 0.5;
+  transform: translateX(50%);
 }
 
 @media (orientation: landscape) {

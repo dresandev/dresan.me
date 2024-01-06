@@ -1,12 +1,14 @@
 export const IMAGES_BASE_PATH = '/images/projects/'
 
+export const APP_HOST_URL = 'https://dresan.me'
+
 export const APP_ROUTES = [
   {
-    href: '/notes',
+    path: '/notes',
     label: 'Notas'
   },
   {
-    href: '/links',
+    path: '/links',
     label: 'Links'
   },
 ]

@@ -15,8 +15,7 @@ export const About = () => {
       )}>
         <div>
           <p className={styles.aboutText}>
-            Hola ✋🏻, me llámo Javier Andrés, me puedes decir Dresan. Soy desarrollador de software enfocado en el Front-end.
-            Fan del desarrollo de UX/UI, desarrollo de software, tecnologias web y CSS 💙.
+            ¡Hola, hola🌊! Me llamo Javier Andrés, puedes decirme Dresan. Desarrollador de software Colombiano enfocado en el Front-end, que disfruta del desarrollo de UX/UI🎨, la tecnología y aprender sobre arquitectura de software.🚀💻
           </p>
 
           <CustomLink

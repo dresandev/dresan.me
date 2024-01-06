@@ -1,0 +1,59 @@
+.contactBtn {
+  --border-radius: 0.5rem;
+  position: relative;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  border: 0.1rem solid var(--border-color);
+  background: var(--bg-color);
+  border-radius: var(--border-radius);
+}
+
+@media (hover: hover) {
+  .contactBtn:before {
+    --size: calc(100% + 0.4rem);
+    content: '';
+    position: absolute;
+    inset-block-start: -0.2rem;
+    inset-inline-start: -0.2rem;
+    z-index: -1;
+    block-size: var(--size);
+    inline-size: var(--size);
+    border-radius: var(--border-radius);
+    opacity: 0;
+    filter: blur(0.5rem);
+    background: linear-gradient(
+      45deg,
+      var(--secondary-color),
+      hsl(27, 100%, 50%),
+      var(--primary-color),
+      hsl(103, 100%, 50%),
+      hsl(170, 100%, 50%),
+      hsl(230, 100%, 50%),
+      hsl(269, 100%, 50%),
+      hsl(313, 100%, 50%),
+      var(--secondary-color)
+    );
+    background-size: 400%;
+    transition: opacity 300ms ease-in-out;
+    animation: animateBackground 20s linear infinite;
+  }
+
+  .contactBtn:hover:before {
+    opacity: 1;
+  }
+
+  .contactBtn:active:before {
+    filter: blur(0.2rem);
+  }
+}
+
+@keyframes animateBackground {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+}
