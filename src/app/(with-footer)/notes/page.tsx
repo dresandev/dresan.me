@@ -1,8 +1,8 @@
-import { Metadata } from 'next'
+import clsx from 'clsx'
 import { NoteCard } from '~/components/NoteCard'
 import styles from './page.module.css'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Dresan — Notas',
   description: 'Notas sobre mi proceso de aprendizaje, algunos tutoriales, pensamientos, entre otros apuntes.',
 }
@@ -15,21 +15,27 @@ export default function NotesPage() {
         Notas sobre mi proceso de aprendizaje, algunos tutoriales, pensamientos, entre otros apuntes.
       </p>
 
-      <div className={styles.notes}>
+      <div className={clsx(
+        'slideInBottom',
+        styles.notes,
+      )}>
         <NoteCard
           slug='/'
           title='Titulo de la nota'
           description='Redactando el contenido'
+          trailingIcon='🫡'
         />
         <NoteCard
           slug='/'
           title='Titulo de la nota'
           description='Redactando el contenido'
+          trailingIcon='🫡'
         />
         <NoteCard
           slug='/'
           title='Titulo de la nota'
           description='Redactando el contenido'
+          trailingIcon='🫡'
         />
       </div>
     </div>

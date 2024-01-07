@@ -4,3 +4,12 @@
   gap: clamp(3rem, 2.515rem + 1.294vw, 5rem);
   padding-block: 5rem;
 }
+
+.notFountMsg {
+  margin-block: 17rem;
+  text-align: center;
+}
+
+.notFountMsg span {
+  color: var(--active-color);
+}

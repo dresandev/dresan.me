@@ -2,6 +2,16 @@ import { Link } from '~/types'
 
 export const links: Link[] = [
   {
+    name: 'The Web Can Do What!?',
+    description: 'Muestra las increíbles capacidades de la web moderna a través del equipo de Chrome para desarrolladores.',
+    url: 'https://thewebshowcase.withgoogle.com/',
+  },
+  {
+    name: 'patterns',
+    description: 'Recurso en línea gratuito sobre patrones de diseño, renderizado y rendimiento para crear aplicaciones web potentes con JavaScript básico o Frameworks modernos.',
+    url: 'https://www.patterns.dev/',
+  },
+  {
     name: 'Here',
     description: 'Sitio para hacer reuniones de una forma muy dinamica',
     url: 'https://here.fm/',
@@ -370,5 +380,10 @@ export const links: Link[] = [
     name: 'SDE Interview Questions ',
     description: 'SDE Interview Questions ',
     url: 'https://www.linkedin.com/posts/harisahmad59_software-engineer-interview-questions-ugcPost-7111180588040040448-HPIG/',
+  },
+  {
+    name: 'Key.js',
+    description: 'Press any key to get the JavaScript keydown event key, code, which and keyCode properties.',
+    url: 'https://keyjs.dev/',
   },
 ]

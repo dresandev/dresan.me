@@ -29,6 +29,8 @@
 }
 
 .navLink {
+  display: block;
+  inline-size: 100%;
   font-family: var(--bebas-neue-font);
   font-size: 4rem;
 }

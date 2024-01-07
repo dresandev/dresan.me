@@ -1,14 +1,16 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import clsx from 'clsx'
 import { Link } from '~/types'
 import { links } from '~/data/links'
+import { getRandomKey } from '~/utils/get-random-key'
 import { useLinksStore } from '~/store/use-links-store'
 import { getLinksByKeywords } from '~/helpers/get-links'
-import { LinkGrid } from '../LinkGrid'
-import styles from './SearchedLinks.module.css'
+import { LinkCard } from '~/components/LinkCard'
+import styles from './LinksSearchResults.module.css'
 
-export const SearchedLinks = () => {
+export const LinksSearchResults = () => {
   const { keywords } = useLinksStore()
   const [searchedLinks, setSearchedLinks] = useState<Link[]>([...links])
 
@@ -26,6 +28,18 @@ export const SearchedLinks = () => {
   }
 
   return (
-    <LinkGrid links={searchedLinks} />
+    <div className={clsx(
+      'slideInBottom',
+      styles.gridContainer,
+    )}>
+      {
+        searchedLinks.map(link => (
+          <LinkCard
+            key={getRandomKey()}
+            {...link}
+          />
+        ))
+      }
+    </div>
   )
 }

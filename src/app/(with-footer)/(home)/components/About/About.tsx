@@ -20,7 +20,8 @@ export const About = () => {
 
           <CustomLink
             className={styles.downloadCV}
-            href='/'
+            href='/files/Javier-Andres_Frontend.pdf'
+            target='_blank'
             prefetch={false}
           >
             Descargar CV
@@ -40,7 +41,7 @@ export const About = () => {
             <li>✦ CSS</li>
             <li>✦ Git</li>
             <li>✦ JavaScript</li>
-            <li>✦ Tailwind</li>
+            <li>✦ Tailwind CSS</li>
             <li>✦ TypeScript</li>
             <li>✦ GraphQL</li>
             <li>✦ React</li>

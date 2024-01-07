@@ -1,5 +1,5 @@
 import { LinksSearchBar } from './components/LinksSearchBar'
-import { SearchedLinks } from './components/SearchedLinks'
+import { LinksSearchResults } from './components/LinksSearchResults'
 import styles from './page.module.css'
 
 export const metadata = {
@@ -17,7 +17,7 @@ export default function LinksPage() {
         Coleccion de links con recursos y herramientas sobre desarrollo de software que me han sido utiles.
       </p>
       <LinksSearchBar />
-      <SearchedLinks />
+      <LinksSearchResults />
     </div>
   )
 }

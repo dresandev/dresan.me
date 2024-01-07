@@ -53,6 +53,7 @@ export default function ProjectPage({
 
   return (
     <>
+      <div className={styles.pageTransition}></div>
       <div className='container'>
         <article>
           <div className={styles.topContent}>

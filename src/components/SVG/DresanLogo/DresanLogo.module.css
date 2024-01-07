@@ -4,9 +4,11 @@
   transition: fill 300ms ease, stroke 300ms ease;
 }
 
-.logo:hover path {
-  fill: transparent;
-  stroke: currentColor;
+@media (hover: hover) {
+  .logo:hover path {
+    fill: transparent;
+    stroke: currentColor;
+  }
 }
 
 @media screen and (max-width: 768px) {

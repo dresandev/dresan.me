@@ -3,16 +3,17 @@
   justify-content: space-between;
   align-items: center;
   gap: clamp(2rem, 1.6rem + 1.25vw, 4rem);
-  padding: clamp(2rem, 1.8rem + 0.625vw, 3rem);
+  padding: 3rem clamp(2rem, 1.8rem + 0.625vw, 3rem);
   background-color: hsl(0, 0%, 13%);
   border-radius: 1rem;
-  text-decoration: none;
   outline-color: transparent;
   transition: outline-color 250ms ease-in-out;
 }
 
-.noteCard:hover {
-  outline: 0.1rem solid var(--secondary-color);
+@media (hover: hover) {
+  .noteCard:hover {
+    outline: 0.1rem solid var(--secondary-color);
+  }
 }
 
 .title {

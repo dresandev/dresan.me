@@ -67,3 +67,19 @@ body {
 .hideOverflow {
   overflow-y: hidden;
 }
+
+.slideInBottom {
+  animation: slideInTop 350ms ease;
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(10rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

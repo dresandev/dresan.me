@@ -5,12 +5,14 @@ interface NoteCardProps {
   slug: string
   title: string
   description: string
+  trailingIcon: string
 }
 
 export const NoteCard: React.FC<NoteCardProps> = ({
   slug,
   title,
   description,
+  trailingIcon,
 }) => {
   return (
     <Link
@@ -25,7 +27,9 @@ export const NoteCard: React.FC<NoteCardProps> = ({
           {description}
         </p>
       </div>
-      <span className={styles.trailingIcon}>🫡</span>
+      <span className={styles.trailingIcon}>
+        {trailingIcon}
+      </span>
     </Link>
   )
 }

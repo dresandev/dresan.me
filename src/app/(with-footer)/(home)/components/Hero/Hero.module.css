@@ -44,7 +44,7 @@
   inset-block-end: 0;
   z-index: -1;
   block-size: auto;
-  inline-size: clamp(20rem, 17.573rem + 6.472vw, 30rem);
+  inline-size: clamp(15rem, 12.573rem + 6.472vw, 25rem);
   opacity: 0.5;
   transform: translateX(50%);
 }

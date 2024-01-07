@@ -2,9 +2,9 @@ import Link, { type LinkProps } from 'next/link'
 import clsx from 'clsx'
 import styles from './CustomLink.module.css'
 
-type CustomLinkProps = {
-  href: string
-} & LinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>
+type CustomLinkProps = {}
+  & LinkProps
+  & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 export const CustomLink: React.FC<CustomLinkProps> = ({
   children,
@@ -16,7 +16,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
       <Link
         className={clsx(
           styles.customLink,
-          className
+          className,
         )}
         {...props}
       >
