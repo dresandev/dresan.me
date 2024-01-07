@@ -4,25 +4,32 @@
 }
 
 .scrollerInner {
-  --gap: clamp(1rem, 0.757rem + 0.647vw, 2rem);
   display: flex;
-  align-items: center;
-  gap: var(--gap);
   inline-size: max-content;
-  animation: scroll 35s linear infinite;
+  will-change: transform;
+  animation: scroll 30s linear infinite;
 }
 
-.text {
+.item {
   font: clamp(4rem, 3.515rem + 1.294vw, 6rem) / normal var(--bebas-neue-font);
 }
 
-.text:nth-child(even) {
+.title {
+  font: inherit;
+}
+
+.item {
+  margin-inline-start: 1.4556666666666667em;
+  list-style-type: '  ✦  ';
+}
+
+.item:nth-child(even) {
   color: transparent;
   -webkit-text-stroke: 0.1rem var(--text-color);
 }
 
 @keyframes scroll {
   to {
-    transform: translateX(calc(-50% - (var(--gap) / 2)));
+    transform: translateX(calc(-50%));
   }
 }

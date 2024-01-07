@@ -8,9 +8,7 @@ import { TextScroller } from '~/components/TextScroller'
 import styles from './page.module.css'
 
 interface ProjectPageProps {
-  params: {
-    slug: string
-  }
+  params: { slug: string }
 }
 
 export function generateMetadata({
@@ -27,8 +25,8 @@ export function generateMetadata({
 }
 
 export function generateStaticParams() {
-  return projects.map(project => ({
-    params: { slug: project.slug }
+  return projects.map(({ slug }) => ({
+    params: { slug }
   }))
 }
 
@@ -53,7 +51,6 @@ export default function ProjectPage({
 
   return (
     <>
-      <div className={styles.pageTransition}></div>
       <div className='container'>
         <article>
           <div className={styles.topContent}>
@@ -130,6 +127,8 @@ export default function ProjectPage({
           Siguiente
         </Link>
       </nav>
+
+      <div className={styles.pageTransition}></div>
     </>
   )
 }

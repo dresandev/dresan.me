@@ -1,11 +1,3 @@
-.pageTransition {
-  position: fixed;
-  inset: 0;
-  z-index: 10;
-  background-color: var(--bg-color);
-  animation: slideOut 300ms ease-out forwards;
-}
-
 .topContent {
   --padding-block-start: 5rem;
   padding-block-start: calc(
@@ -72,7 +64,15 @@
   }
 }
 
-@keyframes slideOut {
+.pageTransition {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: var(--bg-color);
+  animation: slideOutTop 300ms ease-out forwards;
+}
+
+@keyframes slideOutTop {
   to {
     transform: translateY(-100%);
   }

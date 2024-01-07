@@ -6,9 +6,9 @@ import '~/styles/globals.css'
 import '~/styles/reset.css'
 
 export const metadata = {
-  title: 'Dresan — Frontend developer',
-  description: 'Web personal donde puedes descubrir mis habilidades, proyectos y recursos sobre desarrollo web. Explora mi trabajo y contáctame si tienes un proyecto en mente.',
   metadataBase: new URL('https://dresan.me'),
+  title: 'Dresan — Frontend developer',
+  description: 'Web personal donde puedes descubrir mis habilidades, proyectos y links con recursos sobre desarrollo de software. Explora mi trabajo y contáctame si tienes un proyecto en mente.',
   authors: [{ name: 'Javier Andres - Dresan' }],
   creator: 'Javier Andres - Dresan',
   keywords: [
@@ -46,7 +46,7 @@ export default function RootLayout({
   children,
 }: RootLayoutProps) {
   return (
-    <html lang='es' suppressHydrationWarning>
+    <html lang='es'>
       <body className={clsx(
         bebasNeue.variable,
         montserrat.className,

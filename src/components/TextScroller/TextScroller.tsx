@@ -14,32 +14,34 @@ export const TextScroller: React.FC<TextScrollerProps> = ({
     return texts.map((text, i) => {
       if (i === 0) {
         return (
-          <h2
+          <li
+            className={styles.item}
             key={getRandomKey()}
-            className={styles.text}
           >
-            {text} ✦
-          </h2>
+            <h2 className={styles.title}>
+              {text}
+            </h2>
+          </li>
         )
       }
 
       return (
-        <span
+        <li
           key={getRandomKey()}
-          className={styles.text}
+          className={styles.item}
           aria-hidden
         >
-          {text} ✦
-        </span>
+          {text}
+        </li>
       )
     })
   }
 
   return (
     <div className={styles.scroller}>
-      <div className={styles.scrollerInner}>
+      <ul className={styles.scrollerInner}>
         {renderTexts()}
-      </div>
+      </ul>
     </div>
   )
 }

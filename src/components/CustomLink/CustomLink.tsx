@@ -12,16 +12,14 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
   ...props
 }) => {
   return (
-    <>
-      <Link
-        className={clsx(
-          styles.customLink,
-          className,
-        )}
-        {...props}
-      >
-        {children}
-      </Link>
-    </>
+    <Link
+      className={clsx(
+        styles.customLink,
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </Link>
   )
 }
