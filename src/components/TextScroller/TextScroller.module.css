@@ -6,19 +6,11 @@
 .scrollerInner {
   display: flex;
   inline-size: max-content;
-  will-change: transform;
-  animation: scroll 30s linear infinite;
+  animation: scroll 25s linear infinite;
 }
 
 .item {
   font: clamp(4rem, 3.515rem + 1.294vw, 6rem) / normal var(--bebas-neue-font);
-}
-
-.title {
-  font: inherit;
-}
-
-.item {
   margin-inline-start: 1.4556666666666667em;
   list-style-type: '  ✦  ';
 }
@@ -28,8 +20,12 @@
   -webkit-text-stroke: 0.1rem var(--text-color);
 }
 
+.title {
+  font: inherit;
+}
+
 @keyframes scroll {
   to {
-    transform: translateX(calc(-50%));
+    transform: translateX(-50%);
   }
 }

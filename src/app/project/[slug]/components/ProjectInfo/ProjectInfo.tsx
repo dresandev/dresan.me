@@ -1,4 +1,3 @@
-import { getRandomKey } from '~/utils/get-random-key'
 import { CustomLink } from '~/components/CustomLink'
 import { TagPill } from '~/components/TagPill'
 import styles from './ProjectInfo.module.css'
@@ -33,9 +32,9 @@ export const ProjectInfo: React.FC<ProjectInfoProps> = ({
 
       <div className={styles.tags}>
         {
-          tags.map(tag => (
+          tags.map((tag, i) => (
             <TagPill
-              key={getRandomKey()}
+              key={i}
               tagName={tag}
             />
           ))

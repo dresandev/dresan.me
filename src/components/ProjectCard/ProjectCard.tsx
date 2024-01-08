@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import clsx from 'clsx'
-import { getRandomKey } from '~/utils/get-random-key'
 import { TagPill } from '~/components/TagPill'
 import styles from './ProjectCard.module.css'
 
@@ -32,9 +31,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       </Link>
       <div className={styles.tags}>
         {
-          tags.map(tag => (
+          tags.map((tag, i) => (
             <TagPill
-              key={getRandomKey()}
+              key={i}
               tagName={tag}
               withBlur
             />

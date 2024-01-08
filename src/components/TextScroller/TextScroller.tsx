@@ -1,22 +1,23 @@
-import { getRandomKey } from '~/utils/get-random-key'
 import styles from './TextScroller.module.css'
 
 interface TextScrollerProps {
   text: string
 }
 
+const ELEMENTS_AMOUNT = 16
+
 export const TextScroller: React.FC<TextScrollerProps> = ({
   text
 }) => {
-  const renderTexts = () => {
-    const texts = new Array(24).fill(text)
+  const renderElements = () => {
+    const texts = new Array(ELEMENTS_AMOUNT).fill(text)
 
     return texts.map((text, i) => {
       if (i === 0) {
         return (
           <li
+            key={i}
             className={styles.item}
-            key={getRandomKey()}
           >
             <h2 className={styles.title}>
               {text}
@@ -27,7 +28,7 @@ export const TextScroller: React.FC<TextScrollerProps> = ({
 
       return (
         <li
-          key={getRandomKey()}
+          key={i}
           className={styles.item}
           aria-hidden
         >
@@ -40,7 +41,7 @@ export const TextScroller: React.FC<TextScrollerProps> = ({
   return (
     <div className={styles.scroller}>
       <ul className={styles.scrollerInner}>
-        {renderTexts()}
+        {renderElements()}
       </ul>
     </div>
   )

@@ -2,7 +2,6 @@
 
 import clsx from 'clsx'
 import { APP_ROUTES } from '~/constants'
-import { getRandomKey } from '~/utils/get-random-key'
 import { useBoolean } from '~/hooks/use-boolean'
 import { useToggleBodyOverflow } from '~/hooks/use-toggle-body-overflow'
 import { useOnPathnameChange } from '~/hooks/use-on-pathname-change'
@@ -34,7 +33,7 @@ export const NavMenuMobile = () => {
         <ul className={styles.navList}>
           {
             APP_ROUTES.map(({ path, label }) => (
-              <li key={getRandomKey()}>
+              <li key={path}>
                 <CustomLink
                   className={styles.navLink}
                   href={path}

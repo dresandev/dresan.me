@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import clsx from 'clsx'
 import { Link } from '~/types'
 import { links } from '~/data/links'
-import { getRandomKey } from '~/utils/get-random-key'
 import { useLinksStore } from '~/store/use-links-store'
 import { getLinksByKeywords } from '~/helpers/get-links'
 import { LinkCard } from '~/components/LinkCard'
@@ -35,7 +34,7 @@ export const LinksSearchResults = () => {
       {
         searchedLinks.map(link => (
           <LinkCard
-            key={getRandomKey()}
+            key={link.id}
             {...link}
           />
         ))

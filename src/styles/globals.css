@@ -69,17 +69,17 @@ body {
 }
 
 .slideInBottom {
-  animation: slideInTop 350ms ease;
+  animation: slideInTop 400ms ease;
 }
 
 @keyframes slideInTop {
   from {
-    transform: translateY(10rem);
     opacity: 0;
+    transform: translateY(5rem);
   }
 
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }

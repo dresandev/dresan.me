@@ -7,7 +7,7 @@
 }
 
 .description {
-  max-inline-size: 60ch;
+  max-inline-size: 65ch;
   padding-block-end: 3rem;
   white-space: pre-wrap;
 }

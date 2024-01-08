@@ -1,6 +1,5 @@
 import clsx from 'clsx'
 import { projects } from '~/data/projects'
-import { getRandomKey } from '~/utils/get-random-key'
 import { TextScroller } from '~/components/TextScroller'
 import { ProjectCard } from '~/components/ProjectCard'
 import styles from './Projects.module.css'
@@ -16,7 +15,7 @@ export const Projects = () => {
         {
           projects.map(({ slug, title, tags, cardImages }) => (
             <ProjectCard
-              key={getRandomKey()}
+              key={slug}
               className={styles.projectCard}
               slug={slug}
               images={cardImages}

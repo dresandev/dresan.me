@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { projects } from '~/data/projects'
-import { getRandomKey } from '~/utils/get-random-key'
 import { getProjectBySlug } from '~/helpers/get-projects'
 import { ProjectInfo } from './components/ProjectInfo'
 import { TextScroller } from '~/components/TextScroller'
@@ -66,11 +65,11 @@ export default function ProjectPage({
 
             <section className={styles.mobileImagesSection}>
               {
-                mobileImages.map(images => (
-                  <figure key={getRandomKey()}>
+                mobileImages.map(({ large }, i) => (
+                  <figure key={i}>
                     <img
                       className={styles.mobileImage}
-                      src={images.large}
+                      src={large}
                       alt='Imagen de proyecto'
                       width={427}
                       height={926}
@@ -83,21 +82,25 @@ export default function ProjectPage({
 
           <section className={styles.desktopImagesSection}>
             {
-              desktopImages.map(images => (
-                <figure key={getRandomKey()}>
+              desktopImages.map(({
+                large,
+                medium,
+                small
+              }, i) => (
+                <figure key={i}>
                   <img
                     className={styles.desktopImage}
                     srcSet={`
-                      ${images.large} 1530w,
-                      ${images.medium} 1000w,
-                      ${images.small} 500w,
+                      ${large} 1530w,
+                      ${medium} 1000w,
+                      ${small} 500w,
                     `}
                     sizes='
                       (max-width: 550px) 500px,
                       (max-width: 1024px) 1000px,
                       1530px
                     '
-                    src={images.large}
+                    src={large}
                     alt='Imagen de proyecto'
                     width={1530}
                     height={757}

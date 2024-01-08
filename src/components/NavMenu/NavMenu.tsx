@@ -1,5 +1,4 @@
 import { APP_ROUTES } from '~/constants'
-import { getRandomKey } from '~/utils/get-random-key'
 import { CustomLink } from '~/components/CustomLink'
 import { ContactBtn } from '~/components/ContactBtn'
 import styles from './NavMenu.module.css'
@@ -10,7 +9,7 @@ export const NavMenu = () => {
       <ul className={styles.navList}>
         {
           APP_ROUTES.map(({ path, label }) => (
-            <li key={getRandomKey()}>
+            <li key={path}>
               <CustomLink href={path}>
                 {label}
               </CustomLink>

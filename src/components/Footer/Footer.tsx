@@ -1,5 +1,4 @@
-import { getRandomKey } from '~/utils/get-random-key'
-import { SOCIAL_NETWORKS } from './Footer.constants'
+import { SOCIAL_MEDIA } from './Footer.constants'
 import { CustomLink } from '~/components/CustomLink'
 import { CurrentTime } from '~/components/CurrentTime'
 import styles from './Footer.module.css'
@@ -18,8 +17,8 @@ export const Footer = () => {
 
       <ul className={styles.socialNetworksList}>
         {
-          SOCIAL_NETWORKS.map(({ href, label }) => (
-            <li key={getRandomKey()}>
+          SOCIAL_MEDIA.map(({ href, label }) => (
+            <li key={href}>
               <CustomLink
                 className={styles.navLink}
                 prefetch={false}

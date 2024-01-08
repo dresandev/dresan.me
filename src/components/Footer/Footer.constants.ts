@@ -1,14 +1,14 @@
-export const SOCIAL_NETWORKS = [
+export const SOCIAL_MEDIA = [
   {
-    label: 'GitHub',
     href: 'https://github.com/dresandev',
+    label: 'GitHub',
   },
   {
-    label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/dresandev/',
+    label: 'LinkedIn',
   },
   {
-    label: 'CodePen',
     href: 'https://codepen.io/dresandev',
+    label: 'CodePen',
   },
 ]
