@@ -11,8 +11,20 @@ export const links: Link[] = [
   {
     id: getRandomKey(),
     name: 'patterns',
-    description: 'Recurso en línea gratuito sobre patrones de diseño, renderizado y rendimiento para crear aplicaciones web potentes con JavaScript básico o Frameworks modernos.',
+    description: 'Recurso en línea gratuito sobre patrones de diseño, renderizado y rendimiento para crear aplicaciones web potentes.',
     url: 'https://www.patterns.dev/',
+  },
+  {
+    id: getRandomKey(),
+    name: 'BGJar',
+    description: 'Generador de fondos svg gratuito para sus sitios web, blogs y aplicaciones.',
+    url: 'https://bgjar.com/',
+  },
+  {
+    id: getRandomKey(),
+    name: 'Jitter',
+    description: 'Jitter permite a los creadores y equipos diseñar fácilmente interfaces y contenidos animados impresionantes.',
+    url: 'https://jitter.video/',
   },
   {
     id: getRandomKey(),
@@ -31,18 +43,6 @@ export const links: Link[] = [
     name: 'JSON CRACK',
     description: 'Para visualizar JSON y otros formator en graficos.',
     url: 'https://jsoncrack.com/',
-  },
-  {
-    id: getRandomKey(),
-    name: 'BGJar',
-    description: 'Generador de fondos svg gratuito para sus sitios web, blogs y aplicaciones.',
-    url: 'https://bgjar.com/',
-  },
-  {
-    id: getRandomKey(),
-    name: 'Jitter',
-    description: 'Jitter permite a los creadores y equipos diseñar fácilmente interfaces y contenidos animados impresionantes.',
-    url: 'https://jitter.video/',
   },
   {
     id: getRandomKey(),
@@ -463,5 +463,53 @@ export const links: Link[] = [
     name: 'Key.js',
     description: 'Press any key to get the JavaScript keydown event key, code, which and keyCode properties.',
     url: 'https://keyjs.dev/',
+  },
+  {
+    id: getRandomKey(),
+    name: 'Recraft',
+    description: 'Create vector art, icons, digital illustrations, and 3D graphics on a powerful canvas.',
+    url: 'https://www.recraft.ai/',
+  },
+  {
+    id: getRandomKey(),
+    name: 'regex101',
+    description: 'Test your RegExp.',
+    url: 'https://regex101.com/',
+  },
+  {
+    id: getRandomKey(),
+    name: 'Blog',
+    description: 'Design a Notification System with AWS Serverless — Notes and Highlights.',
+    url: 'https://aws.plainenglish.io/design-a-notification-system-with-aws-serverless-notes-and-highlights-26d3dde510b0',
+  },
+  {
+    id: getRandomKey(),
+    name: 'Linkedin source',
+    description: 'Alex Xu: My recommended materials for cracking your next technical interview.',
+    url: 'https://www.linkedin.com/posts/alexxubyte_systemdesign-coding-interviewtips-activity-7107026458673328128-7kOv/',
+  },
+  {
+    id: getRandomKey(),
+    name: 'AWS Skill Builder',
+    description: 'Your learning center to build in-demand cloud skills.',
+    url: 'https://explore.skillbuilder.aws/learn',
+  },
+  {
+    id: getRandomKey(),
+    name: 'Redis for JavaScript Developers',
+    description: 'Build full-fledged Redis applications with Node.js and Express.',
+    url: 'https://university.redis.com/courses/ru102js/',
+  },
+  {
+    id: getRandomKey(),
+    name: 'Blog',
+    description: 'Las noticias, historias y actualizaciones más recientes para desarrolladores.',
+    url: 'https://developer.chrome.com/blog/',
+  },
+  {
+    id: getRandomKey(),
+    name: 'the component gallery',
+    description: 'the component gallery.',
+    url: 'https://component.gallery/components/',
   },
 ]

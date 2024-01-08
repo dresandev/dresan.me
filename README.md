@@ -1,4 +1,3 @@
-
 # Personal Website
 
 This is my personal website where you can find my featured projects, my CV, my notes and some links about software development that have been useful to me.
@@ -13,7 +12,7 @@ It is made with nextjs-14, CSS-modules and my hands 🤌🏻.
 If you want to edit this site locally you can do so by running the following commands
 
 ```bash
-  cd dresan.me 
+  cd dresan.me
   # or the name you gave the project when cloning the repository
   yarn dev
   # or
