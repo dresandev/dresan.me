@@ -15,6 +15,44 @@
 
 @media screen and (max-width: 768px) {
   .nav {
-    display: none;
+    position: fixed;
+    inset: 0;
+    inset-block-start: var(--header-block-size);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.4rem;
+    background-color: var(--bg-color);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-1rem);
+    transition: transform 100ms, opacity 100ms cubic-bezier(0, 0, 0.25, 1),
+      visibility 0s linear 100ms;
+  }
+
+  .navOpen {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: transform 200ms, opacity 0.2ms cubic-bezier(0, 0, 0.25, 1),
+      visibility 0ms;
+  }
+
+  .navList {
+    inline-size: 100%;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .navLink {
+    display: block;
+    inline-size: 100%;
+    font: 4rem / normal var(--bebas-neue-font);
+  }
+
+  .contactBtn {
+    inline-size: 100%;
+    padding-block: 1.5rem;
+    text-align: center;
   }
 }

@@ -1,6 +1,6 @@
 import { CustomLink } from '~/components/CustomLink'
-import styles from './not-found.module.css'
 import { ArrowIcon } from '~/components/SVG'
+import styles from './not-found.module.css'
 
 export const metadata = {
   title: '404 — No encontrado',

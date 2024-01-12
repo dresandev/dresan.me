@@ -1,11 +1,3 @@
-/* Cycling gradient glow - no text duplication by: https://codepen.io/thebabydino/pen/rNPOpJK*/
-
-@property --k {
-  syntax: '<number>';
-  initial-value: 0;
-  inherits: false;
-}
-
 .hero {
   position: relative;
   display: grid;
@@ -23,19 +15,17 @@
   place-self: center;
   font: clamp(7rem, 3.845rem + 8.414vw, 20rem) / 1.2 var(--bebas-neue-font);
   text-align: center;
-}
-
-.titleName {
-  --k: 0;
   color: transparent;
-  background: linear-gradient(
-    90deg,
-    hsl(calc(var(--k) * 1turn), 95%, 65%),
-    hsl(calc(var(--k) * 1turn + 90deg), 95%, 65%)
+  background-image: linear-gradient(
+    45deg,
+    hsl(203, 100%, 57%) 3%,
+    hsl(230, 87%, 61%) 20%,
+    hsl(258, 93%, 62%) 36%,
+    hsl(285, 93%, 50%) 52%,
+    #fc2953 69%,
+    #ffc743 100%
   );
   background-clip: text;
-  filter: url(#f);
-  animation: k 5s linear infinite;
 }
 
 .animalogo {
@@ -52,11 +42,5 @@
 @media (orientation: landscape) {
   .title {
     padding-block: 12rem;
-  }
-}
-
-@keyframes k {
-  to {
-    --k: 1;
   }
 }

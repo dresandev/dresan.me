@@ -112,7 +112,10 @@ export default function ProjectPage({
         </article>
       </div>
 
-      <TextScroller text='Ver más proyectos' />
+      <TextScroller
+        text='Ver más proyectos'
+        emojisType='viewMoreProjects'
+      />
 
       <nav className={styles.nav}>
         <Link

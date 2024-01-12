@@ -1,0 +1,84 @@
+.emoji::before {
+  content: '😎';
+  display: inline-block;
+  font-size: 0.9em;
+  animation: scaleInOut 2s ease-in-out infinite, emojis 14s ease-in-out infinite;
+}
+
+.about {
+  --emoji-1: '🧑‍💼';
+  --emoji-2: '📚';
+  --emoji-3: '🌱';
+  --emoji-4: '🎨';
+  --emoji-5: '🌍';
+  --emoji-6: '🎯';
+  --emoji-7: '🎶';
+}
+
+.contact {
+  --emoji-1: '📞';
+  --emoji-2: '📧';
+  --emoji-3: '👋';
+  --emoji-4: '📱';
+  --emoji-5: '🤝';
+  --emoji-6: '📬';
+  --emoji-7: '🌐';
+}
+
+.projects {
+  --emoji-1: '📅';
+  --emoji-2: '🚀';
+  --emoji-3: '📊';
+  --emoji-4: '📝';
+  --emoji-5: '🛠️';
+  --emoji-6: '🎯';
+  --emoji-7: '💼';
+}
+
+.viewMoreProjects {
+  --emoji-1: '📁';
+  --emoji-2: '🖼️';
+  --emoji-3: '🔍';
+  --emoji-4: '🚀';
+  --emoji-5: '📈';
+  --emoji-6: '📰';
+  --emoji-7: '🎬';
+}
+
+@keyframes scaleInOut {
+  0%,
+  75%,
+  100% {
+    transform: scale(0);
+  }
+
+  25%,
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes emojis {
+  0% {
+    content: var(--emoji-1);
+  }
+  20% {
+    content: var(--emoji-2);
+  }
+  35% {
+    content: var(--emoji-3);
+  }
+  50% {
+    content: var(--emoji-4);
+  }
+  65% {
+    content: var(--emoji-5);
+  }
+  78% {
+    content: var(--emoji-6);
+  }
+  95%,
+  100% {
+    content: var(--emoji-7);
+  }
+}

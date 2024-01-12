@@ -1,13 +1,19 @@
+import { Fragment } from 'react'
+import clsx from 'clsx'
+import { EmojisType } from '~/types'
+import { ChangingEmoji } from '~/components/ChangingEmoji'
 import styles from './TextScroller.module.css'
 
 interface TextScrollerProps {
   text: string
+  emojisType: EmojisType
 }
 
 const ELEMENTS_AMOUNT = 16
 
 export const TextScroller: React.FC<TextScrollerProps> = ({
-  text
+  text,
+  emojisType,
 }) => {
   const renderElements = () => {
     const texts = new Array(ELEMENTS_AMOUNT).fill(text)
@@ -15,34 +21,37 @@ export const TextScroller: React.FC<TextScrollerProps> = ({
     return texts.map((text, i) => {
       if (i === 0) {
         return (
-          <li
-            key={i}
-            className={styles.item}
-          >
-            <h2 className={styles.title}>
+          <Fragment key={i}>
+            <h2 className={clsx(
+              styles.item,
+              styles.title
+            )}>
               {text}
             </h2>
-          </li>
+            <ChangingEmoji emojisType={emojisType} />
+          </Fragment>
         )
       }
 
       return (
-        <li
-          key={i}
-          className={styles.item}
-          aria-hidden
-        >
-          {text}
-        </li>
+        <Fragment key={i}>
+          <span
+            aria-hidden
+            className={styles.item}
+          >
+            {text}
+          </span>
+          <ChangingEmoji emojisType={emojisType} />
+        </Fragment>
       )
     })
   }
 
   return (
     <div className={styles.scroller}>
-      <ul className={styles.scrollerInner}>
+      <div className={styles.scrollerInner}>
         {renderElements()}
-      </ul>
+      </div>
     </div>
   )
 }

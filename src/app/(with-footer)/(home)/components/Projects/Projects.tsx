@@ -7,7 +7,10 @@ import styles from './Projects.module.css'
 export const Projects = () => {
   return (
     <section>
-      <TextScroller text='Proyectos' />
+      <TextScroller
+        text='Proyectos'
+        emojisType='projects'
+      />
       <div className={clsx(
         'container',
         styles.container

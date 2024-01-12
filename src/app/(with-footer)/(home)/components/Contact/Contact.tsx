@@ -6,7 +6,10 @@ import styles from './Contact.module.css'
 export const Contact = () => {
   return (
     <section>
-      <TextScroller text='Contacto' />
+      <TextScroller
+        text='Contacto'
+        emojisType='contact'
+      />
       <div className={clsx(
         'container',
         styles.container

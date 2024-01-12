@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { DresanLogo } from '~/components/SVG'
 import { NavMenu } from '~/components/NavMenu'
-import { NavMenuMobile } from '~/components/NavMenu/NavMenuMobile'
 import styles from './Header.module.css'
 
 export const Header = () => {
@@ -16,7 +15,6 @@ export const Header = () => {
       </Link>
 
       <NavMenu />
-      <NavMenuMobile />
     </header>
   )
 }

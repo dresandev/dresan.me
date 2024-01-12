@@ -1,8 +1,9 @@
 .container {
   display: grid;
-  place-content: center;
-  place-items: center;
-  block-size: 100%;
+  justify-items: center;
+  align-content: center;
+  min-block-size: 100%;
+  padding-inline: var(--space-inline);
 }
 
 .title {
@@ -16,11 +17,8 @@
   color: var(--primary-color);
 }
 
-@media screen and (max-width: 768px) {
-  @media (orientation: landscape) {
-    .container {
-      padding-block: calc(var(--header-block-size) + 8rem) 8rem;
-      padding-inline: var(--space-inline);
-    }
+@media (orientation: landscape) {
+  .container {
+    padding-block: calc(var(--header-block-size) + 8rem) 8rem;
   }
 }

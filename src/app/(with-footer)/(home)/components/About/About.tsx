@@ -7,7 +7,10 @@ import styles from './About.module.css'
 export const About = () => {
   return (
     <section>
-      <TextScroller text='Sobre mí' />
+      <TextScroller
+        text='Sobre mí'
+        emojisType='about'
+      />
 
       <div className={clsx(
         'container',
@@ -15,9 +18,8 @@ export const About = () => {
       )}>
         <div>
           <p className={styles.aboutText}>
-            ¡Hola, hola 🌊! Me llamo Javier Andrés, puedes decirme Dresan. {'\n'}
+            ¡Hola, hola! Me llamo Javier Andrés, puedes decirme Dresan. {'\n'}
             <em>Desarrollador de software</em> <span>Colombiano</span> enfocado en el Front-end, que disfruta del desarrollo de UX/UI, la tecnología, crear cosas bonitas con CSS y aprender sobre arquitectura de software.{'\n'}
-            Llevo más de 4 años desde que me sumergí en este mundo y los que quedan.
           </p>
 
           <CustomLink
