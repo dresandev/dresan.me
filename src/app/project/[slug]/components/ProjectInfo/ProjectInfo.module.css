@@ -41,7 +41,7 @@
 .statsLinks {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(1rem, 0.8rem + 0.625vw, 2rem);
+  gap: 2rem;
 }
 
 @media screen and (min-width: 768px) {

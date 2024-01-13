@@ -4,7 +4,7 @@
 }
 
 .scrollerInner {
-  --column-gap: 2rem;
+  --column-gap: 1rem;
   display: flex;
   column-gap: var(--column-gap);
   inline-size: max-content;

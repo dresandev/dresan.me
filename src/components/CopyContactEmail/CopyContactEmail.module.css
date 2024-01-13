@@ -1,0 +1,40 @@
+.copyEmailBtn {
+  display: block;
+  margin-block-start: 8rem;
+  margin-inline: auto;
+  inline-size: fit-content;
+  line-break: anywhere;
+  font-size: clamp(2.4rem, 1.769rem + 1.683vw, 5rem);
+  font-weight: 500;
+  outline-offset: 0.3rem;
+  transition: color 250ms ease-in-out;
+}
+
+.toolTip {
+  inline-size: fit-content;
+  padding: 1rem 2rem;
+  margin-inline: auto;
+  border: 0.1rem solid currentColor;
+  border-radius: 3rem;
+  transform: translateY(1rem);
+}
+
+@media (hover: hover) {
+  .copyEmailBtn:is(:hover) {
+    color: var(--primary-color);
+  }
+
+  .toolTip {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: visibility 250ms, opacity 250ms ease-in-out,
+      transform 250ms ease-in-out;
+  }
+
+  .copyEmailBtn:is(:hover) + .toolTip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(1rem);
+  }
+}
