@@ -7,6 +7,33 @@ export const metadata = {
   description: 'Notas sobre mi proceso de aprendizaje, algunos tutoriales, pensamientos, entre otros apuntes.',
 }
 
+const NOTES = [
+  {
+    slug: '/',
+    title: 'Titulo de la nota',
+    description: 'Redactando contenido',
+    trailingIcon: '🫡'
+  },
+  {
+    slug: '/',
+    title: 'Titulo de la nota',
+    description: 'Redactando contenido',
+    trailingIcon: '🤯'
+  },
+  {
+    slug: '/',
+    title: 'Titulo de la nota',
+    description: 'Redactando contenido',
+    trailingIcon: '🤔'
+  },
+  {
+    slug: '/',
+    title: 'Titulo de la nota',
+    description: 'Redactando contenido',
+    trailingIcon: '🫥'
+  },
+]
+
 export default function NotesPage() {
   return (
     <div className={styles.container}>
@@ -19,24 +46,14 @@ export default function NotesPage() {
         'slideInBottom',
         styles.notes,
       )}>
-        <NoteCard
-          slug='/'
-          title='Titulo de la nota'
-          description='Redactando el contenido'
-          trailingIcon='🫡'
-        />
-        <NoteCard
-          slug='/'
-          title='Titulo de la nota'
-          description='Redactando el contenido'
-          trailingIcon='🫡'
-        />
-        <NoteCard
-          slug='/'
-          title='Titulo de la nota'
-          description='Redactando el contenido'
-          trailingIcon='🫡'
-        />
+        {
+          NOTES.map(note => (
+            <NoteCard
+              key={note.slug}
+              {...note}
+            />
+          ))
+        }
       </div>
     </div>
   )

@@ -62,10 +62,10 @@
   0% {
     content: var(--emoji-1);
   }
-  20% {
+  25% {
     content: var(--emoji-2);
   }
-  35% {
+  32% {
     content: var(--emoji-3);
   }
   50% {
@@ -74,7 +74,7 @@
   65% {
     content: var(--emoji-5);
   }
-  78% {
+  77% {
     content: var(--emoji-6);
   }
   95%,

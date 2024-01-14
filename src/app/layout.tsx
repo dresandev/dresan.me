@@ -11,18 +11,6 @@ export const metadata = {
   description: 'Web personal donde puedes descubrir mis habilidades, proyectos y links con recursos sobre desarrollo de software. Explora mi trabajo y contáctame si tienes un proyecto en mente.',
   authors: [{ name: 'Javier Andres - Dresan' }],
   creator: 'Javier Andres - Dresan',
-  keywords: [
-    'Dresan',
-    'Desarrollador frontend',
-    'Portafolio web',
-    'Desarrollo web',
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'Nextjs',
-    'Web personal'
-  ],
 }
 
 const bebasNeue = Bebas_Neue({
