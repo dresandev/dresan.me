@@ -30,19 +30,24 @@ export const ContactForm: FC<ContactFormProps> = ({
       })
 
       setIsLoading(true)
-      await fetch(url, {
+      const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formDataObject),
       })
-      setIsLoading(false)
+
+      if (!response.ok) {
+        return notifyToast({
+          title: 'Algo salió mal, intenta más tarde',
+          description: `Error en la solicitud: ${response.status}`,
+        })
+      }
 
       notifyToast({
         title: 'Mensaje recibido',
         description: 'Gracias, te responderé lo antes posible'
       })
     } catch (error: any) {
-      setIsLoading(false)
       notifyToast({
         title: 'Algo salió mal, intenta más tarde',
         description: error.response.data.error
