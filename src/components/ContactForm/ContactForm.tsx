@@ -1,9 +1,10 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
+import type { FC, FormEvent } from 'react'
+import { useState } from 'react'
 import clsx from 'clsx'
+import { FORMSPREE_ID } from '~/constants'
 import { useToastStore } from '~/store/use-toast-store'
-import { useForm } from '~/hooks/use-form'
 import { TextField } from '~/components/TextField'
 import styles from './ContactForm.module.css'
 
@@ -11,69 +12,44 @@ interface ContactFormProps {
   className?: string
 }
 
-interface ContactFormStatus {
-  submitting: boolean
-  hasError: boolean
-}
-
-export const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
-  const { formData, handleInputChange, resetForm } = useForm({
-    initState: {
-      name: '',
-      email: '',
-      message: '',
-    }
-  })
-  const [status, setStatus] = useState<ContactFormStatus>({
-    submitting: false,
-    hasError: false,
-  })
+export const ContactForm: FC<ContactFormProps> = ({
+  className
+}) => {
+  const [isLoading, setIsLoading] = useState(false)
   const { notifyToast } = useToastStore()
 
-  const { name, email, message } = formData
-
-  const handleServerResponse = (
-    ok: boolean,
-    title: string,
-    msg: string
-  ) => {
-    setStatus({
-      submitting: false,
-      hasError: !ok,
-    })
-    notifyToast({
-      title,
-      description: msg
-    })
-    resetForm()
-  }
-
   const handleOnSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    setStatus(prevStatus => ({
-      ...prevStatus,
-      submitting: true
-    }))
-
     try {
-      await fetch('https://formspree.io/f/xoqoayzk', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', },
-        body: JSON.stringify(formData),
+      e.preventDefault()
+      const url = `https://formspree.io/f/${FORMSPREE_ID}`
+      const formData = new FormData(e.target as HTMLFormElement)
+      const formDataObject: Record<string, any> = {}
+
+      formData.forEach((value, key) => {
+        formDataObject[key] = value as string
       })
 
-      handleServerResponse(
-        true,
-        'Mensaje recibido',
-        'Gracias, te responderé lo antes posible'
-      )
+      setIsLoading(true)
+      await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formDataObject),
+      })
+      setIsLoading(false)
+
+      notifyToast({
+        title: 'Mensaje recibido',
+        description: 'Gracias, te responderé lo antes posible'
+      })
     } catch (error: any) {
-      handleServerResponse(
-        false,
-        'Algo salio mal',
-        error.response.data.error
-      )
+      setIsLoading(false)
+      notifyToast({
+        title: 'Algo salió mal, intenta más tarde',
+        description: error.response.data.error
+      })
+    } finally {
+      (e.target as HTMLFormElement).reset()
+      setIsLoading(false)
     }
   }
 
@@ -83,6 +59,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
         styles.form,
         className,
       )}
+      method='POST'
+      action={`https://formspree.io/f/${FORMSPREE_ID}`}
       onSubmit={handleOnSubmit}
     >
       <TextField
@@ -92,8 +70,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
         type='text'
         autoComplete='off'
         autoCorrect='off'
-        value={name}
-        onChange={handleInputChange}
       />
       <TextField
         className={styles.emailInput}
@@ -103,8 +79,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
         autoComplete='off'
         autoCorrect='off'
         required
-        value={email}
-        onChange={handleInputChange}
       />
       <TextField
         className={styles.messageInput}
@@ -112,12 +86,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
         label='Mensaje'
         autoCorrect='off'
         multiline
-        value={message}
-        onChange={handleInputChange}
       />
       <button
         className={styles.submitBtn}
-        disabled={status.submitting}
+        type='submit'
+        disabled={isLoading}
       >
         Enviar
       </button>
