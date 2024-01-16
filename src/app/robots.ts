@@ -1,4 +1,4 @@
-import { APP_HOST_URL } from '~/constants'
+import { HOST_URL } from '~/constants'
 
 export default function robots() {
   return {
@@ -8,7 +8,7 @@ export default function robots() {
         allow: ['/'],
       },
     ],
-    sitemap: `${APP_HOST_URL}/sitemap.xml`,
-    host: APP_HOST_URL,
+    sitemap: `${HOST_URL}/sitemap.xml`,
+    host: HOST_URL,
   }
 }
