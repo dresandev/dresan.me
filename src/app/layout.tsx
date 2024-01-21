@@ -1,12 +1,13 @@
 import { Bebas_Neue, Montserrat } from 'next/font/google'
 import clsx from 'clsx'
+import { HOST_URL } from '~/constants'
 import { Header } from '~/components/Header'
 import { Toast } from '~/components/Toast'
 import '~/styles/globals.css'
 import '~/styles/reset.css'
 
 export const metadata = {
-  metadataBase: new URL('https://dresan.me'),
+  metadataBase: new URL(HOST_URL),
   title: 'Dresan — Frontend developer',
   description: 'Web personal donde puedes descubrir mis habilidades, proyectos y links con recursos sobre desarrollo de software. Explora mi trabajo y contáctame si tienes un proyecto en mente.',
   authors: [{ name: 'Javier Andres - Dresan' }],

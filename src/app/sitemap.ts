@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const routes = APP_ROUTES.map(({ path }) => ({
-    url: `${HOST_URL}/${path}`,
+    url: `${HOST_URL}${path}`,
     lastModified: new Date().toISOString().split('T')[0],
   }))
 

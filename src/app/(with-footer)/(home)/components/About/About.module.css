@@ -49,7 +49,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 1rem;
-  column-gap: 4rem;
+  column-gap: 3em;
   padding-inline-start: 1.5em;
 }
 
